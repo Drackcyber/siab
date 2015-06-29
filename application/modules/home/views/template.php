@@ -63,7 +63,7 @@
                                 <li><a href="<?php echo base_url() ?>home/list_bencana">Daftar Bencana</a></li>
                             </ul>
                         </li>
-                        <li><a href="#">Artikel</a></li>
+                        <li><a href="<?php echo base_url() ?>home/artikel">Artikel</a></li>
                         <li>
                             <a href="#">About Us</a>
                             <ul>
