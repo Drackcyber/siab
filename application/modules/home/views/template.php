@@ -10,6 +10,14 @@
         <link rel="stylesheet" type="text/css" href="<?php echo base_url() ?>assets/home/css/revolution-slider/extralayers.css" media="screen" />
         <link rel="stylesheet" type="text/css" href="<?php echo base_url() ?>assets/home/css/revolution-slider/settings.css" media="screen" />
         <link rel="stylesheet" type="text/css" href="<?php echo base_url() ?>assets/home/css/styles.css" media="screen" />
+        
+        <?php 
+            if (isset($map)) {
+                 echo $map['js']; 
+            } else {
+            }
+
+        ?>  
     </head>
     <body>
         <!-- page container -->
@@ -51,7 +59,8 @@
                         <li>
                             <a href="#">Data Bencana</a>
                             <ul>
-                                <li><a href="<?php echo base_url() ?>#">Daftar Bencana</a></li>
+                                <li><a href="<?php echo base_url() ?>home/peta">Peta Bencana</a></li>
+                                <li><a href="<?php echo base_url() ?>home/list_bencana">Daftar Bencana</a></li>
                             </ul>
                         </li>
                         <li><a href="#">Artikel</a></li>
@@ -145,5 +154,7 @@
         <script type="text/javascript" src="<?php echo base_url() ?>assets/home/js/slider.js"></script>
         <script type="text/javascript" src="<?php echo base_url() ?>assets/home/js/plugins/scrolltotop/scrolltopcontrol.js"></script>
         <!-- ./page scripts -->
+
+        <script type="text/javascript" src="<?php echo base_url() ?>assets/js/plugins/datatables/jquery.dataTables.min.js"></script>
     </body>
 </html>

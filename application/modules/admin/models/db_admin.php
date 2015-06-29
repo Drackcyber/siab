@@ -10,6 +10,14 @@ class db_admin extends CI_Model {
 		
 	}
 
+	public function show_all_lim($table,$limit){
+		$this->db->from($table);
+		$this->db->limit($limit);
+		$query=$this->db->get();
+
+		return $query->result();
+	}
+
 	/**
 	*
 	* MODEL UNTUK TIPE

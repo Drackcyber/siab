@@ -64,7 +64,6 @@
                             <li><a href="<?php echo base_url() ?>admin/daftar_assessment"><span class="fa fa-table"></span> Daftar Assesment </a></li>
                             <li><a href="<?php echo base_url() ?>admin/peta_assessment"><span class="fa fa-table"></span> Peta Bencana </a></li>
                             <li><a href="<?php echo base_url() ?>admin/add_tipe"><span class="fa fa-th-list"></span>Jenis / Tipe Bencana </a></li>
-                            <li><a href="<?php echo base_url() ?>admin/"><span class="fa fa-th-list"></span>Daftar Pengungsian</a></li>
                             
                         </ul>
                     </li>

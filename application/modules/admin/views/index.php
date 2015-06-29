@@ -29,36 +29,26 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <tr>
-                                <td>1</td>
-                                <td>20/12/2010</td>
-                                <td>Longsong Gedangsari</td>
-                                <td>Bencana Alam</td>
-                            </tr>
-                            <tr>
-                                <td>2</td>
-                                <td>20/12/2010</td>
-                                <td>Longsong Gedangsari</td>
-                                <td>Bencana Alam</td>
-                            </tr>
-                            <tr>
-                                <td>3</td>
-                                <td>20/12/2010</td>
-                                <td>Longsong Gedangsari</td>
-                                <td>Bencana Alam</td>
-                            </tr>
-                            <tr>
-                                <td>4</td>
-                                <td>20/12/2010</td>
-                                <td>Longsong Gedangsari</td>
-                                <td>Bencana Alam</td>
-                            </tr>
-                            <tr>
-                                <td>5</td>
-                                <td>20/12/2010</td>
-                                <td>Longsong Gedangsari</td>
-                                <td>Bencana Alam</td>
-                            </tr>
+                            
+                            <?php $i=1; foreach ($assesment as $s) { ?>
+                                <tr>
+                                    <td><?php echo $i  ?></td>
+                                    <td><?php echo $s->tgl_kejadian ?></td>
+                                    <td><?php echo $s->nm_bencana ?></td>
+                                    <td>
+                                    <?php 
+                                        //echo $s->jenis_bencana
+                                        $bencana=$this->db_utama->show_all_where('siab_tipe','id_tipe',$s->jenis_bencana);
+                                        foreach ($bencana as $b) {
+                                           echo $b->nama;
+                                        }
+                                        ?>
+                                    </td>
+                                </tr>
+                               
+                            <?php  $i++; } ?>
+
+                            
                         </tbody>
                     </table>
                 </div>

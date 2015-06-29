@@ -11,7 +11,8 @@ class admin extends MX_Controller {
 
 	public function index()
 	{	
-		$this->template->render('index');
+		$data['assesment']=$this->db_admin->show_all_lim('siab_assesment',5);
+		$this->template->render('index',$data);
 	}
 
 	/**

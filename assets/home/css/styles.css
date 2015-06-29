@@ -20,6 +20,7 @@
 }
 /* EOF PREDEFINED CLASSES */
 
+
 html * {
   outline: none !important;
 }
@@ -65,6 +66,7 @@ a:hover {
   color: #e0401d;
   text-decoration: none;
 }
+
 /* START TEMPLATE */
 .page-container {
   float: left;
@@ -1385,6 +1387,9 @@ blockquote p {
   line-height: 12px;
   color: #828282;
 }
+
+
+
 /* FORMS */
 .form-control {
   height: 30px;
