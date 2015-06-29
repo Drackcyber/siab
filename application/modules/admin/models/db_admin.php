@@ -165,7 +165,24 @@ class db_admin extends CI_Model {
 	**/
 	
 	
+	/**
+	*
+	* START MODEL UNTUK MANAJEMEN HALAMAN
+	*
+	**/
 	
+	public function update_about($id_about,$isi){
+		$this->db->set('isi', $isi);
+		$this->db->where('id_about', $id_about);
+		$this->db->update('siab_about');
+	}
+
+	/**
+		*
+		* END MODEL UNTUK MANAJEMEN HALAMAN
+		*
+	**/
+			
 	
 
 }

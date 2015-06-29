@@ -321,9 +321,33 @@ class admin extends MX_Controller {
 		
 		$this->load->view('admin/peta', $data);
 	}
+
+	/**
+	*
+	* START CONTROLLER MANAJEMEN HALAMAN DEPAN
+	*
+	**/
+
+	public function about(){
+		$data['data_about']=$this->db_utama->show_all('siab_about');
+		$this->template->render('about/about', $data);
+	}
+
+	public function update_about($id_about){
+		$id_about= $this->input->post('id_about');
+		$isi = $this->input->post('isi');
+		$this->db_admin->update_about($id_about,$isi);
+		redirect('admin/about');
+	}
+	/**
+	*
+	* END CONTROLLER MANAJEMEN HALAMAN DEPAN
+	*
+	**/
+	
+	
 	
 }
 
 /* End of file  */
 /* Location: ./application/controllers/ */
-
