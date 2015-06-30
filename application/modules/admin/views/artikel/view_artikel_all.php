@@ -38,9 +38,10 @@
                             <td><?php echo $t->judul ?></td>
                             <td><?php echo $t->tgl_post ?></td>
                             <td>
-                                <a href="<?php echo base_url() ?>admin/edit_artikel/<?php echo $t->id_artikel ?>" class="btn btn-sm btn-warning" title="Edit Artikel"><span class="fa fa-edit"></span></a>
-                                <a href="<?php echo base_url() ?>admin/view_artikel/<?php echo $t->id_artikel ?>" class="btn btn-sm btn-success" title="Lihat Artikel"><span class="fa fa-eye"></span></a>
-                            <a href="<?php echo base_url() ?>admin/del_artikel/<?php echo $t->id_artikel ?>" class="btn btn-sm btn-danger" title="Hapus Artikel"><span class="fa fa-trash-o"></span></a> </td>
+                                <a href="<?php echo base_url() ?>admin/edit_artikel/<?php echo $t->id_artikel ?>" class="btn btn-sm btn-warning fa fa-edit" title="Edit Artikel"></a>
+                                <a href="<?php echo base_url() ?>admin/view_artikel/<?php echo $t->id_artikel ?>" class="btn btn-sm btn-success fa fa-eye" title="Lihat Artikel"></a>
+                                <a href="<?php echo base_url() ?>admin/del_artikel/<?php echo $t->id_artikel ?>" class="btn btn-sm btn-danger fa fa-trash-o" title="Hapus Artikel"></a>
+                            </td>
                         </tr>
                         <?php  $no++;  }
                         ?>

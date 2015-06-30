@@ -56,7 +56,11 @@ class home extends CI_Controller {
 	public function artikel(){
 		$data['artikel']=$this->db_utama->show_all('siab_artikel_prb');
 		$this->template->render('artikel',$data);
-			}
+	}
+
+	public function tabel(){
+		$this->template->render('tabel');
+	}
 
 }
 

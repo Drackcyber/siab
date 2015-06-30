@@ -69,9 +69,10 @@
                             ?></td>
                                 
                             <td>
-                                <a href="<?php echo base_url() ?>admin/edit_petugas/<?php echo $p->id_petugas ?>" class="btn btn-sm btn-warning" title="Edit Petugas"><span class="fa fa-edit"></span></a>
-                                <a href="<?php echo base_url() ?>admin/view_petugas/<?php echo $p->id_petugas ?>" class="btn btn-sm btn-success" title="Lihat Petugas"><span class="fa fa-eye"></span></a>
-                                <a href="<?php echo base_url() ?>admin/del_petugas/<?php echo $p->id_petugas ?>" class="btn btn-sm btn-danger" title="Hapus Petugas"><span class="fa fa-trash-o"></span></a> </td>
+                                <a href="<?php echo base_url() ?>admin/edit_petugas/<?php echo $p->id_petugas ?>" class="btn btn-sm btn-warning fa fa-edit" title="Edit Petugas"></a>
+                                <a href="<?php echo base_url() ?>admin/view_petugas/<?php echo $p->id_petugas ?>" class="btn btn-sm btn-success fa fa-eye" title="Lihat Petugas"></a>
+                                <a href="<?php echo base_url() ?>admin/del_petugas/<?php echo $p->id_petugas ?>" class="btn btn-sm btn-danger fa fa-trash-o" title="Hapus Petugas"></a>
+                            </td>
                         </tr>
                         <?php  $no++;  }
                         ?>

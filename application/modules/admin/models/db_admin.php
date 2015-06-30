@@ -64,10 +64,10 @@ class db_admin extends CI_Model {
 		$this->db->delete('siab_artikel_prb');
 	}
 
-	public function update_artikel($judul,$isi){
+	public function update_artikel($judul,$isi,$id_artikel){
 		$this->db->set('judul', $judul);
 		$this->db->set('isi', $isi);
-		$this->db->where('id_artikel', $tipe);
+		$this->db->where('id_artikel', $id_artikel);
 		$this->db->update('siab_artikel_prb');
 	}
 	/**
@@ -100,6 +100,20 @@ class db_admin extends CI_Model {
 	public function del_petugas($id){
 		$this->db->where('id_petugas', $id);
 		$this->db->delete('siab_petugas');
+	}
+
+	public function update_petugas($id_petugas,$alamat,$hp,$nama,$tgl_lahir,$tmp_lahir,$email,$password,$jk,$jab){
+		$this->db->set('alamat', $alamat );
+		$this->db->set('no_hp', $hp );
+		$this->db->set('nama', $nama );
+		$this->db->set('tmp_lahir', $tmp_lahir );
+		$this->db->set('tgl_lahir', $tgl_lahir );
+		$this->db->set('email', $email );
+		$this->db->set('pass', $password );
+		$this->db->set('jk', $jk );
+		$this->db->set('jabatan', $jab );
+		$this->db->where('id_petugas', $id_petugas);
+		$this->db->update('siab_petugas');
 	}
 
 	/**

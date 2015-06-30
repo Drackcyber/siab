@@ -61,9 +61,9 @@
                         <a href="#"><span class="fa fa-files-o"></span> <span class="xn-text">Assesment Bencana</span></a>
                         <ul>
                             <li><a href="<?php echo base_url() ?>admin/add_assessment"><span class="fa fa-plus"></span> Tambah Assesment </a></li>
-                            <li><a href="<?php echo base_url() ?>admin/daftar_assessment"><span class="fa fa-table"></span> Daftar Assesment </a></li>
-                            <li><a href="<?php echo base_url() ?>admin/peta_assessment"><span class="fa fa-table"></span> Peta Bencana </a></li>
                             <li><a href="<?php echo base_url() ?>admin/add_tipe"><span class="fa fa-th-list"></span>Jenis / Tipe Bencana </a></li>
+                            <li><a href="<?php echo base_url() ?>admin/daftar_assessment"><span class="fa fa-table"></span> Daftar Assesment </a></li>
+                            <li><a href="<?php echo base_url() ?>admin/peta_assessment"><span class="fa fa-globe"></span> Peta Bencana </a></li>
                             
                         </ul>
                     </li>
@@ -71,7 +71,7 @@
                         <a href="#"><span class="fa fa-file-text"></span><span class="xn-text">Artikel Bencana</span></a>
                         <ul>
                             <li><a href="<?php echo base_url() ?>admin/add_artikel"><span class="fa fa-file-text-o"></span>Tambah Artikel</a></li>
-                            <li><a href="<?php echo base_url() ?>admin/view_artikel_a"><span class="fa fa-th-list"></span>Daftar Artikel</a></li>
+                            <li><a href="<?php echo base_url() ?>admin/view_artikel_all"><span class="fa fa-th-list"></span>Daftar Artikel</a></li>
                         </ul>
                     </li>
                     <li class="xn-title">Pesan Pengunjung</li>
@@ -90,6 +90,14 @@
                         <ul>
                             <li><a href="<?php echo base_url() ?>admin/add_petugas"><span class="fa fa-user"></span> Tambah Petugas</a></li>
                             <li><a href="<?php echo base_url() ?>admin/list_petugas"><span class="fa fa-th-list"></span> Daftar Petugas</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="xn-title">Manajemen Halaman</li>
+                    <li class="xn-openable">
+                        <a href="#"><span class="fa fa-users"></span> <span class="xn-text">Manajemen Halaman</span></a>
+                        <ul>
+                            <li><a href="<?php echo base_url() ?>admin/about"><span class="fa fa-user"></span> About Us</a></li> 
                         </ul>
                     </li>
                 </ul>

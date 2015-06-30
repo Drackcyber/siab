@@ -9,8 +9,10 @@
         <!-- END META SECTION -->
         <link rel="stylesheet" type="text/css" href="<?php echo base_url() ?>assets/home/css/revolution-slider/extralayers.css" media="screen" />
         <link rel="stylesheet" type="text/css" href="<?php echo base_url() ?>assets/home/css/revolution-slider/settings.css" media="screen" />
-        <link rel="stylesheet" type="text/css" href="<?php echo base_url() ?>assets/home/css/styles.css" media="screen" />
-        
+        <link rel="stylesheet" type="text/css" href="<?php echo base_url() ?>assets/home/css/styles.css" media="screen" />        
+        <!-- <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.7/css/jquery.dataTables.css" media="screen" />  
+        <link rel="stylesheet" type="text/css" href="<?php echo base_url() ?>assets/home/css/datatable/jquery.dataTables.css" media="screen" />-->        
+        <link rel="stylesheet" type="text/css" href="<?php echo base_url() ?>assets/home/css/datatable/data.css" media="screen" />        
         <?php 
             if (isset($map)) {
                  echo $map['js']; 
@@ -153,8 +155,16 @@
         <script type="text/javascript" src="<?php echo base_url() ?>assets/home/js/actions.js"></script>
         <script type="text/javascript" src="<?php echo base_url() ?>assets/home/js/slider.js"></script>
         <script type="text/javascript" src="<?php echo base_url() ?>assets/home/js/plugins/scrolltotop/scrolltopcontrol.js"></script>
+        <script type="text/javascript" src="<?php echo base_url() ?>assets/js/plugins/dataTables/jquery.dataTables.min.js"></script> 
+        <script type="text/javascript" src="<?php echo base_url() ?>assets/js/plugins/dataTables/datatables.js"></script>
+        <script type="text/javascript">
+            $(document).ready(function() {
+            $('#bencana').dataTable( {
+            "pagingType": "full_numbers"
+            } );
+            } );
+        </script>
         <!-- ./page scripts -->
 
-        <script type="text/javascript" src="<?php echo base_url() ?>assets/js/plugins/datatables/jquery.dataTables.min.js"></script>
     </body>
 </html>

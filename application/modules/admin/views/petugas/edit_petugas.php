@@ -11,20 +11,16 @@
             <div class="panel-heading">
                 <span class="panel-title">Tambah Petugas</span>
             </div>
-                <form id="jvalidate" role="form" class="form-horizontal" action="<?php echo base_url() ?>admin/save_petugas" method="POST">
+                <form id="jvalidate" role="form" class="form-horizontal" action="<?php echo base_url() ?>admin/update_petugas" method="POST">
             <div class="block">
-                <?php 
-                    foreach ($data_petugas as $d) {
-                        # code...
-                    }
-                 ?>
+                <?php foreach ($data_petugas as $d) { ?>
                     <div class="panel-body">
                         <div class="form-group">
                             <label class="col-md-2 control-label">Jabatan Di PMI</label>
                             <div class="col-md-4">
                                 <select name="jab" class="form-control select">
                                     <option value="1">PMR</option>
-                                    <option value="2">KSR</option>
+                                    <option value="2" selected>KSR</option>
                                     <option value="3">TRS</option>
                                     <option value="4">Staff</option>
                                     <option value="5">Pengurus</option>
@@ -41,6 +37,7 @@
                         <div class="form-group">
                             <label class="col-md-2 control-label">Username</label>
                             <div class="col-md-4">
+                                <input type="hidden" class="form-control" name="id_petugas" value="<?php echo $d->id_petugas ?>" />
                                 <input type="text" class="form-control" name="username" placeholder="Username" value="<?php echo $d->user ?>" />
                                 <span class="help-block"></span>
                             </div>
@@ -99,6 +96,7 @@
                             </div>
                         </div>
                     </div>
+                    <?php } ?>
             </div>
             <div class="panel-footer">
                 <button type="submit" class="btn btn-success pull-right">Submit</button>

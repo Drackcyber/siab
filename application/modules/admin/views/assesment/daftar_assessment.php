@@ -40,12 +40,20 @@
                             <td><?php echo $a->tgl_kejadian ?></td>
                             <td><?php echo $a->nm_bencana ?></td>
                             <td><?php echo $a->kecamatan ?></td>
-                            <td><?php echo $a->jenis_bencana ?></td>
+                            <td>
+                                <?php 
+                                        //echo $s->jenis_bencana
+                                        $bencana=$this->db_utama->show_all_where('siab_tipe','id_tipe',$a->jenis_bencana);
+                                        foreach ($bencana as $b) {
+                                           echo $b->nama;
+                                        }
+                                        ?>
+                                </td>
                             <td></td>
                             <td>
-                                <a href="<?php echo base_url() ?>admin/edit_assessment/" class="btn btn-sm btn-warning" title="Edit Assessment"><span class="fa fa-edit"></span></a>
-                                <a href="<?php echo base_url() ?>assesment/view_assessment/" class="btn btn-sm btn-warning" title="Lihat Detail"><span class="fa fa-eye"></span></a>
-                                <a href="<?php echo base_url() ?>admin/del_assessment/" class="btn btn-sm btn-danger" title="Hapus Assessment"><span class="fa fa-trash-o"></span></a> </td>
+                                <a href="<?php echo base_url() ?>admin/edit_assessment/" class="btn btn-sm btn-warning fa fa-edit" title="Edit Assessment"></a>
+                                <a href="<?php echo base_url() ?>assesment/view_assessment/" class="btn btn-sm btn-warning fa fa-eye" title="Lihat Detail"></a>
+                                <a href="<?php echo base_url() ?>admin/del_assessment/" class="btn btn-sm btn-danger fa fa-trash-o" title="Hapus Assessment"></a> </td>
                         </tr>
                         <?php  $no++;  }
                         ?>
