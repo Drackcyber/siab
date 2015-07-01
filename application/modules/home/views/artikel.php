@@ -4,13 +4,11 @@
     <div class="page-content-holder no-padding">
         <!-- page title -->
         <div class="page-title">
-            <h1>Dashboard</h1>
+            <h1>Artikel Kebencanaan</h1>
             <!-- breadcrumbs -->
             <ul class="breadcrumb">
                 <li><a href="#">Home</a></li>
-                <li><a href="#">Data Bencana</a></li>
-                <li><a href="#">Daftar Bencana</a></li>
-                <li class="active">View Detail</li>
+                <li class="active">Artikel</li>
             </ul>
             <!-- ./breadcrumbs -->
         </div>
@@ -20,20 +18,40 @@
 </div>
 <div class="page-content-wrap">
     <!-- page content holder -->
-    <div class="page-content-holder padding-v-30">
-        <?php foreach ($artikel as $a) { ?>
-            
+    <div class="page-content-holder">
         <div class="row">
+            <!-- SIDEBAR -->
+            <div class="col-md-3 pull-right">
+                <div class="panel panel-default">
+                    <div class="panel-heading">Daftar Artikel</div>
+                    <div class="panel-body">
+                        <div class="list-group list-group-conta">
+                        <?php $i=1; foreach ($artikel as $a) { ?>
+                            <a href="<?php base_url() ?>artikel/" class="list-group-item"><?php echo $a->judul ?></a>
+                        <?php $i++; } ?>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- /SIDEBAR -->
+            <!-- ARTIKEL KONTEN -->
+            <?php foreach ($artikel as $a) { ?>
             <div class="col-md-9">
                 <div class="blog-content">
-                    <h2><?php echo $a->judul ?></h2>
-                    <span class="blog-date"><?php echo $a->tgl_post ?></span>
-                    <?php echo $a->isi; ?>
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <h2><?php echo $a->judul ?>
+                            <span class="blog-date pull-right"><span class="fa fa-calendar"></span> <?php echo $a->tgl_post ?> |<span class="fa fa-user"></span>  Admin</span></h2>
+                        </div>
+                        <div class="panel-body">
+                            <?php echo $a->isi; ?>
+                        </div>
+                    </div>
                 </div>
-        <?php } ?>
-
+            </div>
+            <?php } ?>
+            <!-- ./ ARTIKEL KONTEN -->
+        </div>
     </div>
-</div>
-</div>
 </div>
 <!-- ./page content holder -->

@@ -22,31 +22,8 @@
     <!-- page content holder -->
     <div class="page-content-holder">
         <div class="block-heading block-heading-centralized this-animate" data-animate="fadeInDown">
-            <h4>Selamat Datang di Sistem Informasi Assessment Bencana</h4><br>
-            <h3>PMI Kabupaten Gunungkidul</h3>
-            <div class="block-heading-text">
-            </div>
-        </div>
-        <div class="block push-up-20">
-            <div class="row">
-                <div class="col-md-4">
-                    <div class="text-column this-animate" data-animate="fadeInLeft">
-                        <h4>Pendataan Bencana</h4>
-                        <div class="text-column-info">
-                            Menampilkan data <i>Assessment</i> Bencana di wilayah Gunungkidul.
-                        </div>
-                    </div>
-                    <div class="text-column this-animate" data-animate="fadeInLeft">
-                        <h4>Update Data</h4>
-                        <div class="text-column-info">
-                            Kami selalu berusaha meng<i>Update</i> database kami jika terjadi bencana di wilayah Gunungkidul.
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-8 text-center this-animate" data-animate="fadeInRight">
-                    <img src="<?php echo base_url() ?>assets/home/assets/logo_pmi.png" class="img-responsive-mobile"/>
-                </div>
-            </div>
+            <img src="<?php echo base_url() ?>assets/home/img/head.png">
+            <div class="block-heading-text"></div>
         </div>
     </div>
     <!-- ./page content holder -->

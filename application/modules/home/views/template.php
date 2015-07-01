@@ -7,19 +7,20 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <!-- END META SECTION -->
+        <!-- STYLE TEMPLATE -->
         <link rel="stylesheet" type="text/css" href="<?php echo base_url() ?>assets/home/css/revolution-slider/extralayers.css" media="screen" />
         <link rel="stylesheet" type="text/css" href="<?php echo base_url() ?>assets/home/css/revolution-slider/settings.css" media="screen" />
-        <link rel="stylesheet" type="text/css" href="<?php echo base_url() ?>assets/home/css/styles.css" media="screen" />        
-        <!-- <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.7/css/jquery.dataTables.css" media="screen" />  
-        <link rel="stylesheet" type="text/css" href="<?php echo base_url() ?>assets/home/css/datatable/jquery.dataTables.css" media="screen" />-->        
-        <link rel="stylesheet" type="text/css" href="<?php echo base_url() ?>assets/home/css/datatable/data.css" media="screen" />        
-        <?php 
-            if (isset($map)) {
-                 echo $map['js']; 
-            } else {
-            }
-
-        ?>  
+        <link rel="stylesheet" type="text/css" href="<?php echo base_url() ?>assets/home/css/styles.css" media="screen" />
+        <link rel="stylesheet" type="text/css" href="<?php echo base_url() ?>assets/home/css/datatable/data.css" media="screen" />
+        <!-- ./STYLE TEMPLATE -->
+        <!-- TRIGGER MAP GOOGLE -->
+        <?php
+                                                    if (isset($map)) {
+                                                        echo $map['js'];
+                                                    } else {
+                                                    }
+        ?>
+        <!-- END TRIGGER MAP GOOGLE -->
     </head>
     <body>
         <!-- page container -->
@@ -41,7 +42,7 @@
                                 <div class="input-group">
                                     <input type="text" class="form-control" placeholder="Search..."/>
                                     <div class="input-group-btn">
-                                        <button class="btn btn-primary"><span class="fa fa-search"></span></button>
+                                        <button class="btn btn-primary fa fa-search"></button>
                                     </div>
                                 </div>
                             </form>
@@ -92,9 +93,30 @@
                     <div class="page-footer-holder page-footer-holder-main">
                         <div class="row">
                             <!-- about -->
-                            <div class="col-md-3 pull-left">
-                                <h3>SIAB</h3>
-                                <p>Sistem Informasi Assessment Bencana</p>
+                            <div class="pull-left col-md-3">
+                                <form action="" method="POST" rule="form">
+                                    <div  class="form-horizontal">
+                                        <h3>Log In</h3>
+                                        <p>Please fill in your basic personal information in the folowing fields:</p>
+                                        <div class="form-group">
+                                            <div class="input-group">
+                                                <span class="input-group-addon"><span class="fa fa-user"></span></span>
+                                                <input type="password" class="form-control" placeholder="Username">
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <div class="input-group">
+                                                <span class="input-group-addon"><span class="fa fa-lock"></span></span>
+                                                <input type="password" class="form-control" placeholder="Password">
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <div class="col-md-4 pull-right">
+                                                <button class="btn btn-success btn-block">Log In</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </form>
                             </div>
                             <!-- ./about -->
                             <!-- contacts -->
@@ -112,11 +134,6 @@
                                         <strong class="text-primary">Emergency Service PMI Kab. Gunungkidul</strong><br>
                                         (0274) 391-118
                                     </div>
-                                    <div class="fc-row">
-                                        <span class="fa fa-envelope"></span>
-                                        <strong class="text-primary">SIAB Administrator</strong><br>
-                                        <a href="mailto:#">siab@pmi-gunungkidul.or.id</a>
-                                    </div>
                                 </div>
                             </div>
                             <!-- ./contacts -->
@@ -132,9 +149,6 @@
                         <!-- copyright -->
                         <div class="copyright">
                             <a href="<?php echo base_url() ?>/index">&copy; 2015 Sistem Informasi Assessment Bencana</a>
-                        </div>
-                        <div class="copyright pull-right">
-                            <a href="pmi-gunungkidul.or.id">PMI Kabupaten Gunungkidul</a>
                         </div>
                         <!-- ./copyright -->
                     </div>
@@ -155,16 +169,15 @@
         <script type="text/javascript" src="<?php echo base_url() ?>assets/home/js/actions.js"></script>
         <script type="text/javascript" src="<?php echo base_url() ?>assets/home/js/slider.js"></script>
         <script type="text/javascript" src="<?php echo base_url() ?>assets/home/js/plugins/scrolltotop/scrolltopcontrol.js"></script>
-        <script type="text/javascript" src="<?php echo base_url() ?>assets/js/plugins/dataTables/jquery.dataTables.min.js"></script> 
+        <script type="text/javascript" src="<?php echo base_url() ?>assets/js/plugins/dataTables/jquery.dataTables.min.js"></script>
         <script type="text/javascript" src="<?php echo base_url() ?>assets/js/plugins/dataTables/datatables.js"></script>
         <script type="text/javascript">
             $(document).ready(function() {
-            $('#bencana').dataTable( {
-            "pagingType": "full_numbers"
-            } );
+                $('#bencana').dataTable( {
+                    "pagingType": "full_numbers"
+                } );
             } );
         </script>
         <!-- ./page scripts -->
-
     </body>
 </html>
