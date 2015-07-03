@@ -40,7 +40,7 @@
                 <div class="panel-heading">
                     <h5 class="text-center"><strong>Kirim Pesan</strong></h5>
                 </div>
-                <form action="<?php base_url() ?>" method="POST">
+                <form action="<?php base_url() ?>home/index" method="POST">
                     <div class="panel-body">
                         <div class="container-fluid">
                             <div class="alert alert-warning" role="alert">

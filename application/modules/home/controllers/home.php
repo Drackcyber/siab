@@ -108,6 +108,17 @@ class home extends CI_Controller {
 		$this->template->render('contact', $data);
 	}
 
+	public function inbox(){
+		$subjek=$this->input->post('subjek');
+		$nama=$this->input->post('nama');
+		$email=$this->input->post('email');
+		$hp=$this->input->post('hp');
+		$isi=$this->input->post('isi');
+		$this->db_home->save_pesan($id_inbox, $subjek, $nama, $email, $hp, $isi);
+		redirect('home/index');
+
+	}
+
 }
 
 /* End of file  */
