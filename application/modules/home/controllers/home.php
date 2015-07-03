@@ -49,6 +49,26 @@ class home extends CI_Controller {
 		$this->template->render('list',$data);
 	}
 	public function detail_bencana($id){
+		$this->load->library('googlemaps');
+			
+		$config['center']                       = '-7.965251801658337, 110.60055410478515';
+		$config['zoom']                         = 'auto';
+		$config['places']                       = TRUE;
+		$config['map_height']                   = "250px";
+
+		$this->googlemaps->initialize($config);
+		
+		$bencana=$this->db_utama->show_all_where('siab_assesment','id_assesment',$id);
+		foreach ($bencana as $b) {
+		
+		$marker                                 = array();
+		$marker['position']                     = "$b->lat,$b->lng";
+		$marker['infowindow_content']           = "<b>$b->nm_bencana</b> <br> <i> Alamat : $b->lokasi_bencana <br> Tanggal : $b->tgl_kejadian</i> ";
+		$this->googlemaps->add_marker($marker);
+
+		}
+		
+		$data['map']  = $this->googlemaps->create_map();
 		$data['assesment']=$this->db_utama->show_all_where('siab_assesment','id_assesment',$id);
 		$this->template->render('view_bencana',$data);
 	}

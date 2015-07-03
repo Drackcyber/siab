@@ -45,7 +45,7 @@
                         <div class="container-fluid">
                             <div class="alert alert-warning" role="alert">
                                 <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-                                <p class="text-justify">Silahkan kirim pesan kepada kami jika anda mengetahui terjadi sebuah bencana dan memerlukan penanganan lebih lanjut, atau bisa menghubungi kami via Telepon</p>
+                                <p class="text-justify">Informasikan kepada kami jika anda mengetahui terjadi suatu bencana, atau bisa menghubungi kami via Telepon</p>
                             </div>
                             <div class="form-horizontal">
                                 <div class="form-group">
