@@ -82,6 +82,32 @@ class home extends CI_Controller {
 		$this->template->render('tabel');
 	}
 
+	public function about(){
+		$data['about']=$this->db_utama->show_all('siab_about');
+		$this->template->render('about', $data);
+	}
+
+	public function contact(){
+		$this->load->library('googlemaps');
+			
+		$config['center']                       = '-7.965251801658337, 110.60055410478515';
+		$config['zoom']                         = '16';
+		$config['places']                       = TRUE;
+		$config['map_height']                   = "250px";
+
+		$this->googlemaps->initialize($config);
+		
+		
+		$marker                                 = array();
+		$marker['position']                     = "-7.965251801658337, 110.60055410478515";
+		$marker['infowindow_content']           = "Markas PMI Kabupaten Gunungkidul";
+		$this->googlemaps->add_marker($marker);
+
+		$data['map']          = $this->googlemaps->create_map();
+		$data['data_contact'] = $this->db_utama->show_all('siab_contact');
+		$this->template->render('contact', $data);
+	}
+
 }
 
 /* End of file  */

@@ -191,6 +191,16 @@ class db_admin extends CI_Model {
 		$this->db->update('siab_about');
 	}
 
+	public function update_contact($id_contact,$alamat,$no_telp_1,$no_telp_2,$email,$website){
+		$this->db->set('alamat', $alamat);
+		$this->db->set('no_telp_1', $no_telp_1);
+		$this->db->set('no_telp_2', $no_telp_2);
+		$this->db->set('email', $email);
+		$this->db->set('website', $website);
+		$this->db->where('id_contact', $id_contact);
+		$this->db->update('siab_contact');
+	}
+
 	/**
 		*
 		* END MODEL UNTUK MANAJEMEN HALAMAN

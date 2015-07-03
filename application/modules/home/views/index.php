@@ -49,25 +49,39 @@
                             </div>
                             <div class="form-horizontal">
                                 <div class="form-group">
-                                    <p class="text-left">Alamat Email *</p>
-                                    <input type="email" class="form-control" name="email" placeholder="Alamat Email" required="email">
+                                    <label class="control-label col-md-2">Email</label>
+                                    <div class=" col-md-10">
+                                        <input type="email" class="form-control" name="email" placeholder="Alamat Email" required="email">
+                                    </div>
                                 </div>
                                 <div class="form-group">
-                                    <p class="text-left">Nama Pengirim *</p>
+                                    <label class="control-label col-md-2">Nama</label>
+                                    <div class=" col-md-10">
                                     <input type="text" class="form-control" name="pengirim" placeholder="Nama Lengkap" required>
+                                    </div>
                                 </div>
                                 <div class="form-group">
-                                    <p class="text-left">No Handphone *</p>
+                                    <label class="control-label col-md-2">No. HP</label>
+                                    <div class=" col-md-10">
                                     <input type="text" class="form-control" name="no_hp" placeholder="No Handphone" required>
+                                    </div>
                                 </div>
                                 <div class="form-group">
-                                    <p class="text-left">Isi Pesan *</p>
-                                    <textarea name="kontent" class="form-control" rows="3" placeholder="Isi Pesan"></textarea>
+                                    <label class="control-label col-md-2">Subjek</label>
+                                    <div class=" col-md-10">
+                                    <input type="text" class="form-control" name="subjek" placeholder="Subjek" required>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="control-label col-md-2">Pesan</label>
+                                    <div class=" col-md-10">
+                                    <textarea name="kontent" class="form-control" rows="3" placeholder="Isi Pesan" required></textarea>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                        <div class="pull-right">
-                            <button class="btn btn-success btn-block" data-container="body" data-toggle="popover" data-placement="top" data-content="Thank you my friend! :)"><span class="fa fa-envelope-o"></span> Send</button>
+                        <div class="pull-right col-md-10">
+                            <button class="btn btn-success" data-container="body" data-toggle="popover" data-placement="top" data-content="Thank you my friend! :)"><span class="fa fa-envelope-o"></span> Send</button>
                         </div>
                     </div>
                 </form>

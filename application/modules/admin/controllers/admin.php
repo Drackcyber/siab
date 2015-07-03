@@ -12,6 +12,7 @@ class admin extends MX_Controller {
 	public function index()
 	{	
 		$data['assesment']=$this->db_admin->show_all_lim('siab_assesment',5);
+		$data['artikel']=$this->db_admin->show_all_lim('siab_artikel_prb',5);
 		$this->template->render('index',$data);
 	}
 
@@ -369,11 +370,31 @@ class admin extends MX_Controller {
 	}
 
 	public function update_about($id_about){
-		$id_about= $this->input->post('id_about');
-		$isi = $this->input->post('isi');
+		$id_about = $this->input->post('id_about');
+		$isi      = $this->input->post('isi');
 		$this->db_admin->update_about($id_about,$isi);
 		redirect('admin/about');
 	}
+
+
+
+	public function contact(){
+		$data['data_contact']=$this->db_utama->show_all('siab_contact');
+		$this->template->render('about/contact', $data);
+	}
+
+	public function update_contact($id_contact){
+		$id_contact =$this->input->post('id_contact');
+		$alamat     =$this->input->post('alamat');
+		$no_telp_1  =$this->input->post('no_telp_1');
+		$no_telp_2  =$this->input->post('no_telp_2');
+		$email      =$this->input->post('email');
+		$website    =$this->input->post('website');
+
+		$this->db_admin->update_contact($id_contact,$alamat,$no_telp_1,$no_telp_2,$email,$website);
+		redirect('admin/contact');
+	}
+
 	/**
 	*
 	* END CONTROLLER MANAJEMEN HALAMAN DEPAN

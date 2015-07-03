@@ -48,7 +48,7 @@
                                 <div class="profile-data-title">Sistem Informasi Assessment Bencana</div>
                             </div>
                             <div class="profile-controls">
-                                <a href="pages-profile.html" class="profile-control-left"><span class="fa fa-info"></span></a>
+                                <a href="#" class="profile-control-left"><span class="fa fa-info"></span></a>
                                 <a href="<?php echo base_url() ?>admin/inbox" class="profile-control-right"><span class="fa fa-envelope"></span></a>
                             </div>
                         </div>
@@ -95,9 +95,10 @@
 
                     <li class="xn-title">Manajemen Halaman</li>
                     <li class="xn-openable">
-                        <a href="#"><span class="fa fa-users"></span> <span class="xn-text">Manajemen Halaman</span></a>
+                        <a href="#"><span class="fa fa-desktop"></span> <span class="xn-text">Manajemen Halaman</span></a>
                         <ul>
-                            <li><a href="<?php echo base_url() ?>admin/about"><span class="fa fa-user"></span> About Us</a></li> 
+                            <li><a href="<?php echo base_url() ?>admin/about"><span class="fa fa-info-circle"></span> Tentang Aplikasi</a></li> 
+                            <li><a href="<?php echo base_url() ?>admin/contact"><span class="fa fa-user"></span> Hubungi Kami</a></li> 
                         </ul>
                     </li>
                 </ul>

@@ -25,7 +25,7 @@
                 <div class="panel panel-default">
                     <div class="panel-heading">Daftar Artikel</div>
                     <div class="panel-body">
-                        <div class="list-group list-group-conta">
+                        <div class="list-group list-group-contact">
                         <?php $i=1; foreach ($artikel as $a) { ?>
                             <a href="<?php base_url() ?>artikel/" class="list-group-item"><?php echo $a->judul ?></a>
                         <?php $i++; } ?>

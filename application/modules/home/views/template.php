@@ -15,10 +15,9 @@
         <!-- ./STYLE TEMPLATE -->
         <!-- TRIGGER MAP GOOGLE -->
         <?php
-                                                    if (isset($map)) {
-                                                        echo $map['js'];
-                                                    } else {
-                                                    }
+            if (isset($map)) {
+                echo $map['js'];
+                } else { }
         ?>
         <!-- END TRIGGER MAP GOOGLE -->
     </head>
@@ -70,8 +69,8 @@
                         <li>
                             <a href="#">About Us</a>
                             <ul>
-                                <li><a href="<?php echo base_url() ?>#">Tentang Aplikasi</a></li>
-                                <li><a href="<?php echo base_url() ?>#">Hubungi Kami</a></li>
+                                <li><a href="<?php echo base_url() ?>home/about">Tentang Aplikasi</a></li>
+                                <li><a href="<?php echo base_url() ?>home/contact">Hubungi Kami</a></li>
                             </ul>
                         </li>
                     </ul>
