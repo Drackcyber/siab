@@ -130,7 +130,11 @@
                     <!-- END SIGN OUT -->
                     <!-- TASKS -->
                     <li class="pull-right">
-                        <a href="#">Hallo, Admin <span class="fa fa-user"></span></a>
+                        <a href="#">Hallo, 
+                        <?php $id_ses=$this->session->userdata('login');
+                            echo $id_ses['nama'];
+                         ?> 
+                        <span class="fa fa-user"></span></a>
                         
                         <div class="panel panel-primary animated zoomIn xn-drop-left xn-panel-dragging">
                             <div class="panel-heading">
@@ -140,11 +144,11 @@
                                 </div>
                             </div>
                             <div class="panel-body list-group scroll">
-                                <a class="list-group-item" href="<?php echo base_url() ?>admin/edit_profile">
+                                <a class="list-group-item" href="<?php echo base_url() ?>admin/edit_profile/<?php  echo $id_ses['id']; ?>">
                                     <span class="fa fa-edit"></span>
                                     <strong>Edit Profile</strong>    
                                 </a>
-                                <a class="list-group-item" href="<?php echo base_url() ?>admin/view_profile">
+                                <a class="list-group-item" href="<?php echo base_url() ?>admin/view_profile/<?php  echo $id_ses['id']; ?>">
                                     <span class="fa fa-eye"></span>
                                     <strong>View Profile</strong>    
                                 </a>
@@ -175,7 +179,7 @@
                     </div>
                     <div class="mb-footer">
                         <div class="pull-right">
-                            <a href="<?php echo base_url() ?>admin/login" class="btn btn-success btn-lg">Yes</a>
+                            <a href="<?php echo base_url() ?>login/logout" class="btn btn-success btn-lg">Yes</a>
                             <button class="btn btn-default btn-lg mb-control-close">No</button>
                         </div>
                     </div>

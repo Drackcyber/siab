@@ -28,6 +28,16 @@ class admin extends MX_Controller {
 		$this->template->render('artikel/add_artikel',$data);
 	}
 
+
+	public function edit_profile($id){
+		$data['petugas']=$this->db_utama->show_all_where('siab_petugas','id_petugas',$id);
+		$this->template->render('profile/edit_profile',$data);
+	}
+	public function view_profile($id){
+		$data['petugas']=$this->db_utama->show_all_where('siab_petugas','id_petugas',$id);
+		$this->template->render('profile/view_profile',$data);
+	}
+
 	public function save_artikel(){
 		$judul =$this->input->post('judul');
 		$isi   =$this->input->post('isi');
@@ -232,7 +242,12 @@ class admin extends MX_Controller {
 		$inten_kejadian  =$this->input->post('inten_kejadian');
 		$waktu           =$this->input->post('waktu');
 		$tgl_kejadian    =$this->input->post('tgl_kejadian');
-		$sarana_umum     =$this->input->post('sarana_umum');
+		$sarana     	 =$this->input->post('sarana_umum');
+		$sarana_umum ="";
+		foreach ($sarana as $key => $value) {
+			$sarana_umum = $sarana_umum." ".$value.",";
+			
+		}
 		$ket_umum        =$this->input->post('ket_umum');
 		$meninggal       =$this->input->post('meninggal');
 		$lk_ringan       =$this->input->post('lk_ringan');

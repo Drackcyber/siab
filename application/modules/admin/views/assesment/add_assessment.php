@@ -123,12 +123,13 @@
                                     <div class="form-group">
                                         <label class="col-md-2 control-label">Sarana Umum</label>
                                         <div class="col-md-8">
-                                            <select name="sarana_umum" class="form-control select" multiple required>
-                                                <option value="1" selected="">Lapangan</option>
-                                                <option value="2" >Sekolah</option>
-                                                <option value="3" >Balai Desa</option>
-                                                <option value="4" >Tempat Ibadah</option>
-                                                <option value="5" >Rumah Sakit / Fasilitas Kesehatan</option>
+                                            <select name="sarana_umum[]" class="form-control select" multiple="multiple" required>
+
+                                                <option value="Lapangan" selected="">Lapangan</option>
+                                                <option value="Sekolah" >Sekolah</option>
+                                                <option value="Balai Desa" >Balai Desa</option>
+                                                <option value="Tempat Ibadah" >Tempat Ibadah</option>
+                                                <option value="Rumah Sakit / Fasilitas Kesehatan" >Rumah Sakit / Fasilitas Kesehatan</option>
                                             </select>
                                         </div>
                                     </div>
@@ -136,6 +137,7 @@
                                         <label class="col-md-2 control-label">Keterangan</label>
                                         <div class="col-md-10">
                                             <textarea class="form-control" name="ket_umum" placeholder="Keterangan Tambahan Jika Perlu" rows="2"></textarea>
+                                            
                                         </div>
                                     </div>
                                     <!-- END CONTENT STEP 1 -->

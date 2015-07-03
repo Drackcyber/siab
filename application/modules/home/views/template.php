@@ -93,20 +93,20 @@
                         <div class="row">
                             <!-- about -->
                             <div class="pull-left col-md-3">
-                                <form action="" method="POST" rule="form">
+                                <form action="<?php echo base_url() ?>login/login_adm" method="POST" rule="form">
                                     <div  class="form-horizontal">
                                         <h3>Log In</h3>
                                         <p>Please fill in your basic personal information in the folowing fields:</p>
                                         <div class="form-group">
                                             <div class="input-group">
                                                 <span class="input-group-addon"><span class="fa fa-user"></span></span>
-                                                <input type="password" class="form-control" placeholder="Username">
+                                                <input type="text" name="username" class="form-control" placeholder="Username">
                                             </div>
                                         </div>
                                         <div class="form-group">
                                             <div class="input-group">
                                                 <span class="input-group-addon"><span class="fa fa-lock"></span></span>
-                                                <input type="password" class="form-control" placeholder="Password">
+                                                <input type="password" name="password" class="form-control" placeholder="Password">
                                             </div>
                                         </div>
                                         <div class="form-group">

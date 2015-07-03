@@ -6,12 +6,15 @@
 </ul>
 <!-- END BREADCRUMB -->
 <div class="rows">
+    <?php foreach ($petugas as $p) {
+        # code...
+    } ?>
     <div class="col-md-12">
         <div class="panel panel-default">
             <div class="panel-heading">
                 <span class="panel-title">Edit Profile</span>
             </div>
-            <form id="jvalidate" role="form" class="form-horizontal" action="<?php echo base_url() ?>admin/save_petugas" method="POST">
+            <form id="jvalidate" role="form" class="form-horizontal" action="<?php echo base_url() ?>admin/update_petugas" method="POST">
                 <div class="block">
                     <div class="panel-body">
                         <div class="form-group">
@@ -29,49 +32,49 @@
                         <div class="form-group">
                             <label class="col-md-2 control-label">Nama Lengkap</label>
                             <div class="col-md-4">
-                                <input type="text" class="form-control" name="nama" placeholder="Nama Lengkap" required>
+                                <input type="text" class="form-control" name="nama" placeholder="Nama Lengkap"  value="<?php echo $p->nama ?>" required>
                                 <span class="help-block"></span>
                             </div>
                         </div>
                         <div class="form-group">
                             <label class="col-md-2 control-label">Username</label>
                             <div class="col-md-4">
-                                <input type="text" class="form-control" name="username" placeholder="Username" disabled="">
+                                <input type="text" class="form-control" name="username" placeholder="Username"  value="<?php echo $p->user ?>"  disabled="">
                                 <span class="help-block"></span>
                             </div>
                         </div>
                         <div class="form-group">
                             <label class="col-md-2 control-label">Password</label>
                             <div class="col-md-4">
-                                <input type="password" class="form-control" name="password" placeholder="Password" required>
+                                <input type="text" class="form-control" name="password" placeholder="Password"  value="<?php echo $p->pass ?>" required>
                                 <span class="help-block"></span>
                             </div>
                         </div>
                         <div class="form-group">
                             <label class="col-md-2 control-label">E-mail</label>
                             <div class="col-md-4">
-                                <input type="email" name="email" class="form-control" placeholder="E-mail Address">
+                                <input type="email" name="email" class="form-control" placeholder="E-mail Address"  value="<?php echo $p->email ?>" >
                                 <span class="help-block"></span>
                             </div>
                         </div>
                         <div class="form-group">
                             <label class="col-md-2 control-label">Nomor <i>Handphone</i></label>
                             <div class="col-md-4">
-                                <input type="text" name="hp" class="form-control" placeholder="Nomor Handphone" required>
+                                <input type="text" name="hp" class="form-control" placeholder="Nomor Handphone" value="<?php echo $p->no_hp ?>" required>
                                 <span class="help-block"></span>
                             </div>
                         </div>
                         <div class="form-group">
                             <label class="col-md-2 control-label">Tempat Lahir</label>
                             <div class="col-md-3">
-                                <input type="text" class="form-control" name="tmp_lahir" placeholder="Tempat Lahir"/>
+                                <input type="text" class="form-control" name="tmp_lahir" placeholder="Tempat Lahir" value="<?php echo $p->tmp_lahir ?>" />
                                 <span class="help-block">Contoh: Gunungkidul</span>
                             </div>
                             <label class="col-md-2 control-label">Tanggal Lahir</label>
                             <div class="col-md-2">
                                 <div class="input-group">
                                     <span class="input-group-addon"><span class="fa fa-calendar"></span></span>
-                                    <input type="text" name="tgl_lahir" class="form-control datepicker" value="">
+                                    <input type="text" name="tgl_lahir" class="form-control datepicker" value="<?php echo $p->tgl_lahir ?>">
                                 </div>
                                 <span class="help-block">Contoh: 2000-12-31</span>
                             </div>
@@ -89,8 +92,9 @@
                             <div class="form-group">
                                 <label class="col-md-2 control-label">Alamat Tinggal</label>
                                 <div class="col-md-10">
-                                    <textarea type="text" name="alamat" class="form-control" row="2" required></textarea>
+                                    <textarea type="text" name="alamat" class="form-control" row="2" required>  <?php echo $p->alamat ?> </textarea>
                                     <span class="help-block"></span>
+                                    <input type="hidden" value="<?php echo $p->id_petugas ?>" name="id_petugas">
                                 </div>
                             </div>
                         </div>
