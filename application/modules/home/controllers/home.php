@@ -6,12 +6,21 @@ class home extends CI_Controller {
 	{
 		parent::__construct();
 		$this->load->model('db_utama');
+		$this->load->model('db_home');
 	}
 
 	public function index()
 	{
 		$this->template->render('index');
 	}
+
+
+	public function save_pesan(){
+		$post=$this->input->post('tipe');
+		$this->db_admin->save_tipe($post);
+		redirect('home/index');
+	}
+
 
 	public function peta()
 	{	
@@ -114,7 +123,7 @@ class home extends CI_Controller {
 		$email=$this->input->post('email');
 		$hp=$this->input->post('hp');
 		$isi=$this->input->post('isi');
-		$this->db_home->save_pesan($id_inbox, $subjek, $nama, $email, $hp, $isi);
+		$this->db_home->save_pesan($subjek, $nama, $email, $hp, $isi);
 		redirect('home/index');
 
 	}

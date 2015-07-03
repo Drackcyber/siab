@@ -19,7 +19,7 @@
                         <div class="form-group">
                             <label class="control-label col-md-2">Alamat</label>
                             <div class="col-md-10">
-                                <input type="hidden" name="" value="<?php echo $c->id_contact ?>">
+                                <input type="hidden" name="id_contact" value="<?php echo $c->id_contact ?>">
                                 <input type="text" name="alamat" class="form-control" placeholder="Masukkan Alamat" value="<?php echo $c->alamat ?>" required>
                             </div>
                         </div>

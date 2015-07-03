@@ -383,13 +383,13 @@ class admin extends MX_Controller {
 		$this->template->render('about/contact', $data);
 	}
 
-	public function update_contact($id_contact){
-		$id_contact =$this->input->post('id_contact');
-		$alamat     =$this->input->post('alamat');
-		$no_telp_1  =$this->input->post('no_telp_1');
-		$no_telp_2  =$this->input->post('no_telp_2');
-		$email      =$this->input->post('email');
-		$website    =$this->input->post('website');
+	public function update_contact(){
+		echo "<br>	".$id_contact =$this->input->post('id_contact');
+		echo "<br>	".$alamat     =$this->input->post('alamat');
+		echo "<br>	".$no_telp_1  =$this->input->post('no_telp_1');
+		echo "<br>	".$no_telp_2  =$this->input->post('no_telp_2');
+		echo "<br>	".$email      =$this->input->post('email');
+		echo "<br>	".$website    =$this->input->post('website');
 
 		$this->db_admin->update_contact($id_contact,$alamat,$no_telp_1,$no_telp_2,$email,$website);
 		redirect('admin/contact');

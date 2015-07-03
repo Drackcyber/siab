@@ -24,13 +24,14 @@ class db_home extends CI_Model {
 	*
 	**/
 
-	public function save_pesan($id_inbox, $subjek, $nama, $email, $hp, $isi){
+	public function save_pesan($subjek, $nama, $email, $hp, $isi){
 		$this->db->set('subjek', $subjek);
 		$this->db->set('nama', $nama);
 		$this->db->set('email', $email);
 		$this->db->set('hp', $hp);
 		$this->db->set('isi', $isi);
-		$this->db->set('waktu', date('Y-m-d'));
+		$this->db->set('waktu', date('H:m:s'));
+		$this->db->set('tgl_post', date('Y-m-d'));
 		$this->db->insert('siab_inbox');
 	}
 

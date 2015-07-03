@@ -40,7 +40,7 @@
                 <div class="panel-heading">
                     <h5 class="text-center"><strong>Kirim Pesan</strong></h5>
                 </div>
-                <form action="<?php base_url() ?>home/index" method="POST">
+                <form action="<?php base_url() ?>home/inbox" method="POST">
                     <div class="panel-body">
                         <div class="container-fluid">
                             <div class="alert alert-warning" role="alert">
@@ -63,7 +63,7 @@
                                 <div class="form-group">
                                     <label class="control-label col-md-2">No. HP</label>
                                     <div class=" col-md-10">
-                                    <input type="text" class="form-control" name="no_hp" placeholder="No Handphone" required>
+                                    <input type="text" class="form-control" name="hp" placeholder="No Handphone" required>
                                     </div>
                                 </div>
                                 <div class="form-group">
@@ -75,7 +75,7 @@
                                 <div class="form-group">
                                     <label class="control-label col-md-2">Pesan</label>
                                     <div class=" col-md-10">
-                                    <textarea name="kontent" class="form-control" rows="3" placeholder="Isi Pesan" required></textarea>
+                                    <textarea name="isi" class="form-control" rows="3" placeholder="Isi Pesan" required></textarea>
                                     </div>
                                 </div>
                             </div>
