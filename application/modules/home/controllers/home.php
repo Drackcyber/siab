@@ -118,11 +118,11 @@ class home extends CI_Controller {
 	}
 
 	public function inbox(){
-		$subjek=$this->input->post('subjek');
-		$nama=$this->input->post('pengirim');
-		$email=$this->input->post('email');
-		$hp=$this->input->post('hp');
-		$isi=$this->input->post('isi');
+		echo $subjek=$this->input->post('subjek');
+		echo $nama=$this->input->post('nama');
+		echo $email=$this->input->post('email');
+		echo $hp=$this->input->post('hp');
+		echo $isi=$this->input->post('isi');
 		$this->db_home->save_pesan($subjek, $nama, $email, $hp, $isi);
 		redirect('home/index');
 

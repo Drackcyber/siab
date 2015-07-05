@@ -215,6 +215,7 @@ class db_admin extends CI_Model {
 
 	public function sent($penerima, $isi, $subjek){
 		$this->db->set('penerima', $penerima);
+		$this->db->set('email', $penerima);
 		$this->db->set('isi', $isi);
 		$this->db->set('subjek', $subjek);
 		$this->db->set('waktu', date('H:m:s'));

@@ -66,7 +66,7 @@
                         <div class="form-group">
                             <label class="col-md-2 control-label">Subject :</label>
                             <div class="col-md-10">
-                                <input type="text" class="form-control" name="subjek" value="<?php echo $p->subjek ?>" readonly>
+                                <input type="text" class="form-control" name="subjek" value="Replay - <?php echo $p->subjek ?>" readonly>
                                 <span class="help-block"></span>
                             </div>
                         </div>

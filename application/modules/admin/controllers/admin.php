@@ -340,14 +340,26 @@ class admin extends MX_Controller {
 	}
 
 	public function sent (){
-		$data['sent']=$this->db_utama->show_all('siab_sent');
-		$this->template->render('pesan/send', $data);	
+		$data['sent']=$this->db_utama->show_all_distinc('siab_sent');
+		print_r($data['sent']);
+		//$this->template->render('pesan/send', $data);	
 	}
 
 	public function reply(){
 		$penerima =$this->input->post('penerima');
 		$isi =$this->input->post('isi');
 		$subjek =$this->input->post('subjek');
+
+		$this->load->library('email');
+
+		$this->email->from('siab@pmi-gunungkidul.or.id', 'Admin SIAB Gunungkidul');
+		$this->email->to($penerima); 
+
+		$this->email->subject($subjek);
+		$this->email->message($isi);	
+
+		$this->email->send();
+		
 		$this->db_admin->sent($penerima, $isi, $subjek);
 		redirect('admin/sent');
 	}

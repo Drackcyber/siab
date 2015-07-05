@@ -25,6 +25,16 @@ class db_utama extends CI_Model {
 		return $query->result();
 	}
 
+	public function show_all_distinc($table){
+		$this->db->select('id_sent,penerima,subjek,email');
+		$this->db->distinct('email');
+		$this->db->from($table);
+		$query=$this->db->get();
+
+		return $query->result();
+	}
+	
+
 }
 
 /* End of file  */

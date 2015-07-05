@@ -47,7 +47,7 @@
                         <a href="<?php echo base_url() ?>admin/del_pesan/<?php echo $n->id_inbox ?>" class="btn btn-sm btn-danger fa fa-trash-o"></a>
                         </div>
                         <div class="mail-user col-md-2"><?php echo $n->nama ?></div>
-                        <a href="<?php echo base_url() ?>admin/lihat_pesan/<?php echo $n->id_inbox ?>" class="mail-text"><?php echo $n->isi ?></a>
+                        <a href="<?php echo base_url() ?>admin/lihat_pesan/<?php echo $n->id_inbox ?>" class="mail-text"><?php echo $n->subjek ?></a>
                         <div class="mail-date"><?php echo $n->tgl_post ?>,<?php echo $n->waktu ?></div>
                     </li>
                     <?php $i++; } ?>
