@@ -119,7 +119,7 @@ class home extends CI_Controller {
 
 	public function inbox(){
 		$subjek=$this->input->post('subjek');
-		$nama=$this->input->post('nama');
+		$nama=$this->input->post('pengirim');
 		$email=$this->input->post('email');
 		$hp=$this->input->post('hp');
 		$isi=$this->input->post('isi');
