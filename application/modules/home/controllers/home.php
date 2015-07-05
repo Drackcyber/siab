@@ -12,6 +12,7 @@ class home extends CI_Controller {
 	public function index()
 	{	
 		$data['grafik']=$this->db_utama->show_all('siab_tipe');
+		$data['id_bencana']=$this->db_home->show_all_distinc();
 		$this->template->render('index',$data);
 	}
 

@@ -10,6 +10,18 @@ class db_home extends CI_Model {
 		
 	}
 
+	public function show_all_distinc(){
+		$query=$this->db->query("SELECT DISTINCT(jenis_bencana) FROM siab_assesment ORDER BY jenis_bencana");
+
+		return $query->result();
+	}
+
+	public function show_data_count($id){
+		$query=$this->db->query("SELECT count(jenis_bencana) as jumlah FROM siab_assesment where jenis_bencana =".$id);
+
+		return $query->result();
+	}
+
 	public function show_all_lim($table,$limit){
 		$this->db->from($table);
 		$this->db->limit($limit);

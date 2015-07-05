@@ -188,9 +188,23 @@
                     $isi=$isi."'".$g->nama."',";
 
                 }
+                $data_grafik="";
+                foreach ($id_bencana as $i) {
+                    //echo $i->jenis_bencana."<br>"; 
+                    $jumlah=$this->db_home->show_data_count($i->jenis_bencana);
+                    foreach ($jumlah as $j) {
+                        //echo $j->jumlah."<br>";
+                        $data_grafik=$data_grafik."".$j->jumlah.",";
+                    }
+                }
+
+
                 //echo $isi."<br> ";
                 $max=strlen($isi);
                 $tipe=substr($isi,0,$max-1);
+                $max2=strlen($data_grafik);
+                $grafik=substr($data_grafik,0,$max2-1);
+
                 ?>
                 <script>
                     var randomScalingFactor = function(){ return Math.round(Math.random()*100)};
@@ -203,7 +217,7 @@
                                 strokeColor : "rgba(220,220,220,0.8)",
                                 highlightFill: "rgba(220,220,220,0.75)",
                                 highlightStroke: "rgba(220,220,220,1)",
-                                data : [40,12]
+                                data : [<?php echo $grafik ?>]
                             }
                         ]
 
