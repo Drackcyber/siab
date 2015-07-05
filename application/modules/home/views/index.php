@@ -57,25 +57,25 @@
                                 <div class="form-group">
                                     <label class="control-label col-md-2">Nama</label>
                                     <div class=" col-md-10">
-                                    <input type="text" class="form-control" name="nama" placeholder="Nama Lengkap" required>
+                                        <input type="text" class="form-control" name="nama" placeholder="Nama Lengkap" required>
                                     </div>
                                 </div>
                                 <div class="form-group">
                                     <label class="control-label col-md-2">No. HP</label>
                                     <div class=" col-md-10">
-                                    <input type="text" class="form-control" name="hp" placeholder="No Handphone" required>
+                                        <input type="text" class="form-control" name="hp" placeholder="No Handphone" required>
                                     </div>
                                 </div>
                                 <div class="form-group">
                                     <label class="control-label col-md-2">Subjek</label>
                                     <div class=" col-md-10">
-                                    <input type="text" class="form-control" name="subjek" placeholder="Subjek" required>
+                                        <input type="text" class="form-control" name="subjek" placeholder="Subjek" required>
                                     </div>
                                 </div>
                                 <div class="form-group">
                                     <label class="control-label col-md-2">Pesan</label>
                                     <div class=" col-md-10">
-                                    <textarea name="isi" class="form-control" rows="3" placeholder="Isi Pesan" required></textarea>
+                                        <textarea name="isi" class="form-control" rows="3" placeholder="Isi Pesan" required></textarea>
                                     </div>
                                 </div>
                             </div>
@@ -88,6 +88,22 @@
             </div>
         </div>
         <!-- END KIRIM PESAN -->
+        <div class="col-md-6">
+            <!-- START BAR CHART -->
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h5 class="text-center"><strong>Grafik Bencana 2014</strong></h5>
+                </div>
+                <div class="panel-body">
+                    <div style="width: 80%">
+                        <center>
+                            <canvas id="canvas" height="100%" width="100%"></canvas>
+                        </center>
+                    </div>
+                </div>
+            </div>
+            <!-- END BAR CHART -->
+        </div>
     </div>
     <!-- ./page content holder -->
 </div>

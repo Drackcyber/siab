@@ -170,6 +170,10 @@
         <script type="text/javascript" src="<?php echo base_url() ?>assets/home/js/plugins/scrolltotop/scrolltopcontrol.js"></script>
         <script type="text/javascript" src="<?php echo base_url() ?>assets/js/plugins/dataTables/jquery.dataTables.min.js"></script>
         <script type="text/javascript" src="<?php echo base_url() ?>assets/js/plugins/dataTables/datatables.js"></script>
+
+        <script type="text/javascript" src="<?php echo base_url() ?>assets/home/js/chart.js"></script>
+
+
         <script type="text/javascript">
             $(document).ready(function() {
                 $('#bencana').dataTable( {
@@ -177,6 +181,46 @@
                 } );
             } );
         </script>
+        <?php 
+            $isi="";
+            if (isset($grafik)) {  
+                foreach ($grafik as $g) {
+                    $isi=$isi."'".$g->nama."',";
+
+                }
+                //echo $isi."<br> ";
+                $max=strlen($isi);
+                $tipe=substr($isi,0,$max-1);
+                ?>
+                <script>
+                    var randomScalingFactor = function(){ return Math.round(Math.random()*100)};
+
+                    var barChartData = {
+                        labels : [<?php echo $tipe ?>],
+                        datasets : [
+                            {
+                                fillColor : "rgba(220,220,220,0.5)",
+                                strokeColor : "rgba(220,220,220,0.8)",
+                                highlightFill: "rgba(220,220,220,0.75)",
+                                highlightStroke: "rgba(220,220,220,1)",
+                                data : [40,12]
+                            }
+                        ]
+
+                    }
+                    window.onload = function(){
+                        var ctx = document.getElementById("canvas").getContext("2d");
+                        window.myBar = new Chart(ctx).Bar(barChartData, {
+                            responsive : true
+                        });
+                    }
+
+                </script>
+            <?php } else {
+            }
+            
+         ?>
+        
         <!-- ./page scripts -->
     </body>
 </html>

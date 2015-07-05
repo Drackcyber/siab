@@ -10,8 +10,9 @@ class home extends CI_Controller {
 	}
 
 	public function index()
-	{
-		$this->template->render('index');
+	{	
+		$data['grafik']=$this->db_utama->show_all('siab_tipe');
+		$this->template->render('index',$data);
 	}
 
 
