@@ -7,10 +7,12 @@ class admin extends MX_Controller {
 		parent::__construct();
 		$this->load->model('db_utama');
 		$this->load->model('db_admin');
+		$this->load->library('session');
 	}
 
 	public function index()
 	{	
+		$this->validation();
 		$data['assesment']=$this->db_admin->show_all_lim('siab_assesment',5);
 		$data['artikel']=$this->db_admin->show_all_lim('siab_artikel_prb',5);
 		$this->template->render('index',$data);
@@ -24,21 +26,25 @@ class admin extends MX_Controller {
 	
 	public function add_artikel()
 	{
+		$this->validation();
 		$data['artikel']=$this->db_utama->show_all('siab_artikel_prb');
 		$this->template->render('artikel/add_artikel',$data);
 	}
 
 
 	public function edit_profile($id){
+		$this->validation();
 		$data['petugas']=$this->db_utama->show_all_where('siab_petugas','id_petugas',$id);
 		$this->template->render('profile/edit_profile',$data);
 	}
 	public function view_profile($id){
+		$this->validation();
 		$data['petugas']=$this->db_utama->show_all_where('siab_petugas','id_petugas',$id);
 		$this->template->render('profile/view_profile',$data);
 	}
 
 	public function save_artikel(){
+		$this->validation();
 		$judul =$this->input->post('judul');
 		$isi   =$this->input->post('isi');
 		$this->db_admin->save_artikel($judul,$isi);
@@ -46,27 +52,32 @@ class admin extends MX_Controller {
 	}
 
 	public function del_artikel($id){
+		$this->validation();
 		$this->db_admin->del_artikel($id);
 		redirect('admin/view_artikel_all');
 	}
 
 	public function view_artikel($id){
+		$this->validation();
 		$data['artikel']=$this->db_utama->show_all_where('siab_artikel_prb','id_artikel',$id);
 		$this->template->render('artikel/view_artikel',$data);
 	}
 
 	public function view_artikel_all(){
+		$this->validation();
 		$data['artikel']=$this->db_utama->show_all('siab_artikel_prb');
 		$this->template->render('artikel/view_artikel_all',$data);
 	}
 
 	public function edit_artikel($id){
+		$this->validation();
 		$data['data_artikel']=$this->db_utama->show_all_where('siab_artikel_prb','id_artikel',$id);
 		$data['artikel']=$this->db_utama->show_all('siab_artikel_prb');
 		$this->template->render('artikel/edit_artikel',$data);
 	}
 
 	public function update_artikel($id_artikel){
+		$this->validation();
 		$judul=$this->input->post('judul');
 		$isi=$this->input->post('isi');
 		$id_artikel=$this->input->post('id_artikel');
@@ -90,22 +101,26 @@ class admin extends MX_Controller {
 	
 	public function add_tipe()
 	{
+		$this->validation();
 		$data['tipe']=$this->db_utama->show_all('siab_tipe');
 		$this->template->render('assesment/add_tipe',$data);
 	}
 
 	public function save_tipe(){
+		$this->validation();
 		$post=$this->input->post('tipe');
 		$this->db_admin->save_tipe($post);
 		redirect('admin/add_tipe');
 	}
 
 	public function del_tipe($id){
+		$this->validation();
 		$this->db_admin->del_tipe($id);
 		redirect('admin/add_tipe');
 	}
 
 	public function update_tipe($id){
+		$this->validation();
 		$id=$this->input->post('id');
 		$post=$this->input->post('tipe');
 		$this->db_admin->update_tipe($id,$post);
@@ -113,6 +128,7 @@ class admin extends MX_Controller {
 	}
 
 	public function edit_tipe($id){
+		$this->validation();
 		$data['data_tipe']=$this->db_utama->show_all_where('siab_tipe','id_tipe',$id);
 		//print_r($data['data_tipe']);
 		$data['tipe']=$this->db_utama->show_all('siab_tipe');
@@ -132,10 +148,12 @@ class admin extends MX_Controller {
 	*
 	**/
 	public function add_petugas(){
+		$this->validation();
 		$this->template->render('petugas/add_petugas');
 	}
 
 	public function save_petugas(){
+		$this->validation();
 		$alamat    =$this->input->post('alamat');
 		$hp        =$this->input->post('hp');
 		$nama      =$this->input->post('nama');
@@ -152,11 +170,13 @@ class admin extends MX_Controller {
 	}
 
 	public function edit_petugas($id){
+		$this->validation();
 		$data['data_petugas']=$this->db_utama->show_all_where('siab_petugas','id_petugas',$id);
 		$this->template->render('petugas/edit_petugas',$data);
 	}
 
 	public function update_petugas(){
+		$this->validation();
 		$alamat     =$this->input->post('alamat');
 		$hp         =$this->input->post('hp');
 		$nama       =$this->input->post('nama');
@@ -174,16 +194,19 @@ class admin extends MX_Controller {
 
 
 	public function del_petugas($id){
+		$this->validation();
 		$this->db_admin->del_petugas($id);
 		redirect('admin/list_petugas');
 	}
 
 	public function list_petugas(){
+		$this->validation();
 		$data['petugas']=$this->db_utama->show_all('siab_petugas');
 		$this->template->render('petugas/list_petugas',$data);
 	}
 
 	public function view_petugas($id){
+		$this->validation();
 		$data['data_petugas']=$this->db_utama->show_all_where('siab_petugas','id_petugas',$id);
 		$this->template->render('petugas/view_petugas',$data);
 	}
@@ -200,6 +223,7 @@ class admin extends MX_Controller {
 	*
 	**/
 	public function add_assessment(){
+		$this->validation();
 
 		
 		$this->load->library('googlemaps');
@@ -233,6 +257,7 @@ class admin extends MX_Controller {
 	}
 
 	public function save_assesment(){
+		$this->validation();
 		$lat             =$this->input->post('lat');
 		$lng             =$this->input->post('lng');
 		$lokasi_bencana  =$this->input->post('lokasi_bencana');
@@ -285,6 +310,7 @@ class admin extends MX_Controller {
 	}
 
 	public function peta_assessment(){
+		$this->validation();
 	 	$this->load->library('googlemaps');
 			
 		$config['center']                       = '-7.965251801658337, 110.60055410478515';
@@ -315,11 +341,13 @@ class admin extends MX_Controller {
 	}
 
 	public function daftar_assessment(){
+		$this->validation();
 		$data['assesment']=$this->db_utama->show_all('siab_assesment');
 		$this->template->render('assesment/daftar_assessment',$data);
 	}
 
 	public function view_assessment(){
+		$this->validation();
 		$this->template->render('assesment/view_assessment');
 	}
 
@@ -335,17 +363,20 @@ class admin extends MX_Controller {
 	*
 	**/
 	public function inbox (){
+		$this->validation();
 		$data['inbox'] =$this->db_utama->show_all('siab_inbox');
 		$this->template->render('pesan/inbox', $data);	
 	}
 
 	public function sent (){
+		$this->validation();
 		$data['sent']=$this->db_utama->show_all_distinc('siab_sent');
 		print_r($data['sent']);
 		//$this->template->render('pesan/send', $data);	
 	}
 
 	public function reply(){
+		$this->validation();
 		$penerima =$this->input->post('penerima');
 		$isi =$this->input->post('isi');
 		$subjek =$this->input->post('subjek');
@@ -365,15 +396,18 @@ class admin extends MX_Controller {
 	}
 
 	public function delete (){
+		$this->validation();
 		$this->template->render('pesan/delete');	
 	}
 
 	public function lihat_pesan ($id){
+		$this->validation();
 		$data['pesan']=$this->db_utama->show_all_where('siab_inbox','id_inbox',$id);
 		$this->template->render('pesan/lihat_pesan', $data);
 	}
 
 	public function lihat_pesan_terkirim ($id){
+		$this->validation();
 		$data['terkirim']=$this->db_utama->show_all_where('siab_sent','id_sent',$id);
 		$this->template->render('pesan/lihat_pesan_sent', $data);
 	}
@@ -386,6 +420,7 @@ class admin extends MX_Controller {
 
 
 	public function peta(){
+		$this->validation();
 		$this->load->library('googlemaps');
 		
 		$config['center']  = '37.4419, -122.1419';
@@ -408,11 +443,13 @@ class admin extends MX_Controller {
 	**/
 
 	public function about(){
+		$this->validation();
 		$data['data_about']=$this->db_utama->show_all('siab_about');
 		$this->template->render('about/about', $data);
 	}
 
 	public function update_about($id_about){
+		$this->validation();
 		$id_about = $this->input->post('id_about');
 		$isi      = $this->input->post('isi');
 		$this->db_admin->update_about($id_about,$isi);
@@ -422,11 +459,13 @@ class admin extends MX_Controller {
 
 
 	public function contact(){
+		$this->validation();
 		$data['data_contact']=$this->db_utama->show_all('siab_contact');
 		$this->template->render('about/contact', $data);
 	}
 
 	public function update_contact(){
+		$this->validation();
 		echo "<br>	".$id_contact =$this->input->post('id_contact');
 		echo "<br>	".$alamat     =$this->input->post('alamat');
 		echo "<br>	".$no_telp_1  =$this->input->post('no_telp_1');
@@ -450,15 +489,20 @@ class admin extends MX_Controller {
 	*
 	**/
 
-	public function login(){
-		$this->load->view('login');
-	}
+	
 
 	/**
 	*
 	* END CONTROLLER LOGIN
 	*
 	**/
+
+
+	public function validation(){
+		if (!$this->session->userdata('login')) {
+			redirect('login');
+		}
+	}
 	
 	
 	
