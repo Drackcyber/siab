@@ -204,7 +204,7 @@ class admin extends MX_Controller {
 		
 		$this->load->library('googlemaps');
 
-		$config['center']                       = '-7.965251801658337, 110.60055410478515';
+		$config['center']                       = '-7.965326178943176, 110.6054089031021';
 		$config['zoom']                         = '16';
 		$config['places'] = TRUE;
 		/*
@@ -216,7 +216,7 @@ class admin extends MX_Controller {
 		$this->googlemaps->initialize($config);
 
 		$marker               = array();
-		$marker['position']   = '-7.965251801658337, 110.60055410478515';
+		$marker['position']   = '-7.965407, 110.605366';
 		$marker['draggable']  = true;
 		$marker['animation']  ='DROP';
 		$config['map_height'] ='300px';
