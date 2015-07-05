@@ -207,6 +207,26 @@ class db_admin extends CI_Model {
 		*
 	**/
 			
+	/**
+	*
+	* START MODEL KIRIM PESAN
+	*
+	**/
+
+	public function sent($penerima, $isi, $subjek){
+		$this->db->set('penerima', $penerima);
+		$this->db->set('isi', $isi);
+		$this->db->set('subjek', $subjek);
+		$this->db->set('waktu', date('H:m:s'));
+		$this->db->set('tgl_sent', date('Y-m-d'));
+		$this->db->insert('siab_sent');
+	}
+	/**
+	*
+	* END MODEL KIRIM PESAN
+	*
+	**/
+	
 	
 
 }

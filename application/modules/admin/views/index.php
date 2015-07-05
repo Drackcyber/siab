@@ -37,11 +37,10 @@
                                 <td><?php echo $s->nm_bencana ?></td>
                                 <td>
                                     <?php
-                                                                            //echo $s->jenis_bencana
-                                                                            $bencana=$this->db_utama->show_all_where('siab_tipe','id_tipe',$s->jenis_bencana);
-                                                                            foreach ($bencana as $b) {
-                                                                            echo $b->nama;
-                                                                            }
+                                        $bencana=$this->db_utama->show_all_where('siab_tipe','id_tipe',$s->jenis_bencana);
+                                        foreach ($bencana as $b) {
+                                        echo $b->nama;
+                                        }
                                     ?>
                                 </td>
                             </tr>

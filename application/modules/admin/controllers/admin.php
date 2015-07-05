@@ -335,19 +335,35 @@ class admin extends MX_Controller {
 	*
 	**/
 	public function inbox (){
-		$this->template->render('pesan/inbox');	
+		$data['inbox'] =$this->db_utama->show_all('siab_inbox');
+		$this->template->render('pesan/inbox', $data);	
 	}
 
-	public function send (){
-		$this->template->render('pesan/send');	
+	public function sent (){
+		$data['sent']=$this->db_utama->show_all('siab_sent');
+		$this->template->render('pesan/send', $data);	
+	}
+
+	public function reply(){
+		$penerima =$this->input->post('penerima');
+		$isi =$this->input->post('isi');
+		$subjek =$this->input->post('subjek');
+		$this->db_admin->sent($penerima, $isi, $subjek);
+		redirect('admin/sent');
 	}
 
 	public function delete (){
 		$this->template->render('pesan/delete');	
 	}
 
-	public function lihat_pesan (){
-		$this->template->render('pesan/lihat_pesan');
+	public function lihat_pesan ($id){
+		$data['pesan']=$this->db_utama->show_all_where('siab_inbox','id_inbox',$id);
+		$this->template->render('pesan/lihat_pesan', $data);
+	}
+
+	public function lihat_pesan_terkirim ($id){
+		$data['terkirim']=$this->db_utama->show_all_where('siab_sent','id_sent',$id);
+		$this->template->render('pesan/lihat_pesan_sent', $data);
 	}
 	/**
 	*
@@ -360,8 +376,8 @@ class admin extends MX_Controller {
 	public function peta(){
 		$this->load->library('googlemaps');
 		
-		$config['center']   = '37.4419, -122.1419';
-		$config['zoom']     = 'auto';
+		$config['center']  = '37.4419, -122.1419';
+		$config['zoom']    = 'auto';
 		$config['onclick'] = "document.getElementById('latFld').value =latLng.lat();document.getElementById('latFld').value = latLng.lng();";
 		$this->googlemaps->initialize($config);
 		

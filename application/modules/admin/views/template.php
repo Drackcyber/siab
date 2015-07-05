@@ -132,7 +132,7 @@
                     <li class="pull-right">
                         <a href="#">Hallo, 
                         <?php $id_ses=$this->session->userdata('login');
-                            echo $id_ses['nama'];
+                            echo $id_ses['user'];
                          ?> 
                         <span class="fa fa-user"></span></a>
                         
@@ -140,7 +140,11 @@
                             <div class="panel-heading">
                                 <h3 class="panel-title"><span class="fa fa-user"></span> Profile</h3>
                                 <div class="pull-right">
-                                    <span class="label label-success">Haris Sudrajat</span>
+                                    <span class="label label-success">
+                                        <?php $id_ses=$this->session->userdata('login');
+                                        echo $id_ses['nama'];
+                                        ?>
+                                    </span>
                                 </div>
                             </div>
                             <div class="panel-body list-group scroll">

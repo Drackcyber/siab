@@ -21,9 +21,8 @@
     <div class="content-frame-left">
         <div class="block">
             <div class="list-group border-bottom">
-                <a href="<?php echo base_url() ?>admin/inbox" class="list-group-item"><span class="fa fa-inbox"></span> Pesan Masuk <span class="badge badge-success">3</span></a>
-                <a href="<?php echo base_url() ?>admin/send" class="list-group-item active"><span class="fa fa-rocket"></span> Pesan Terkirim</a>
-                <a href="<?php echo base_url() ?>admin/delete" class="list-group-item"><span class="fa fa-trash-o"></span> Pesan Dihapus <span class="badge badge-default">1.4k</span></a>
+                <a href="<?php echo base_url() ?>admin/inbox" class="list-group-item"><span class="fa fa-inbox"></span> Pesan Masuk</a>
+                <a href="<?php echo base_url() ?>admin/sent" class="list-group-item active"><span class="fa fa-rocket"></span> Pesan Terkirim</a>
             </div>
         </div>
     </div>
@@ -32,14 +31,6 @@
     <div class="content-frame-body">
         <div class="panel panel-default">
             <div class="panel-heading">
-                <label class="check mail-checkall">
-                    <input type="checkbox">
-                </label>
-                <div class="btn-group">
-                    <button class="btn btn-default"><span class="fa fa-mail-reply"></span></button>
-                    <button class="btn btn-default"><span class="fa fa-mail-reply-all"></span></button>
-                </div>
-                <button class="btn btn-default"><span class="fa fa-trash-o"></span></button>
                 <div class="pull-right" style="width: 150px;">
                     <div class="input-group">
                         <div class="input-group-addon"><span class="fa fa-calendar"></span></div>
@@ -49,50 +40,19 @@
             </div>
             <div class="panel-body mail">
             <ul class="list-group">
+            <?php $i=1; foreach ($sent as $s) { ?>
                 <li class="mail-item list-group-item">
                     <div class="mail-checkbox">
-                        <input type="checkbox" >
+                        <a href="<?php echo base_url() ?>admin/del_pesan/<?php echo $s->id_sent ?>" class="btn btn-sm btn-danger fa fa-trash-o"></a>
                     </div>
-                    <div class="mail-user">Dmitry Ivaniuk</div>
-                    <a href="<?php echo base_url() ?>admin/lihat_pesan" class="mail-text">Product development</a>
-                    <div class="mail-date">Today, 11:21</div>
+                    <div class="mail-user col-md-2"><?php echo $s->penerima ?></div>
+                    <a href="<?php echo base_url() ?>admin/lihat_pesan_terkirim/<?php echo $s->id_sent ?>" class="mail-text">Re: <?php echo $s->subjek ?></a>
+                    <div class="mail-date"><?php echo $s->tgl_sent ?>, <?php echo $s->waktu ?></div>
                 </li>
-                <li  class="mail-item list-group-item mail-info">
-                    <div class="mail-checkbox">
-                        <input type="checkbox" >
-                    </div>
-                    <div class="mail-user">Dmitry Ivaniuk</div>
-                    <a href="<?php echo base_url() ?>admin/lihat_pesan" class="mail-text">Product development</a>
-                    <div class="mail-date">Today, 11:21</div>
-                </li>
-                <li  class="mail-item list-group-item">
-                    <div class="mail-checkbox">
-                        <input type="checkbox" >
-                    </div>
-                    <div class="mail-user">John Doe</div>
-                    <a href="pages-mailbox-message.html" class="mail-text">New Windows 9 App</a>
-                    <div class="mail-date">Today, 10:36</div>
-                </li>
-                <li  class="mail-item list-group-item">
-                    <div class="mail-checkbox">
-                        <input type="checkbox" >
-                    </div>
-                    <div class="mail-user">HTC</div>
-                    <a href="pages-mailbox-message.html" class="mail-text">New updates on your phone HD7</a>
-                    <div class="mail-date">Sep 13</div>
-                    <div class="mail-attachments">
-                        <span class="fa fa-paperclip"></span> 58Mb
-                    </div>
-                </li>
+            <?php $i++; } ?>
             </ul>
             </div>
             <div class="panel-footer">
-                <div class="btn-group">
-                    <button class="btn btn-default"><span class="fa fa-mail-reply"></span></button>
-                    <button class="btn btn-default"><span class="fa fa-mail-reply-all"></span></button>
-                </div>
-                <button class="btn btn-default"><span class="fa fa-trash-o"></span></button>
-                
                 <ul class="pagination pagination-sm pull-right">
                     <li class="disabled"><a href="#">«</a></li>
                     <li class="active"><a href="#">1</a></li>

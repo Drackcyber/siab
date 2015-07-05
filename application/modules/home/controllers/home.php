@@ -63,7 +63,7 @@ class home extends CI_Controller {
 		$config['center']                       = '-7.965251801658337, 110.60055410478515';
 		$config['zoom']                         = 'auto';
 		$config['places']                       = TRUE;
-		$config['map_height']                   = "250px";
+		$config['map_height']                   = "300px";
 
 		$this->googlemaps->initialize($config);
 		

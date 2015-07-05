@@ -57,7 +57,7 @@
                                 <div class="form-group">
                                     <label class="control-label col-md-2">Nama</label>
                                     <div class=" col-md-10">
-                                    <input type="text" class="form-control" name="pengirim" placeholder="Nama Lengkap" required>
+                                    <input type="text" class="form-control" name="nama" placeholder="Nama Lengkap" required>
                                     </div>
                                 </div>
                                 <div class="form-group">
