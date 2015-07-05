@@ -23,9 +23,9 @@
                             <div class="col-md-6 col-xs-12">
                                 <div class="input-group">
                                     <span class="input-group-addon"><span class="fa fa-pencil"></span></span>
-                                    <input name="tipe" type="text" class="form-control"/>
+                                    <input name="tipe" type="text" class="form-control" required="required">
                                 </div>
-                                <span class="help-block"><i>Bencana Alam, Konflik, Kecelakaan</i></span>
+                                <span class="help-block"><i>Gempa Bumi, Longsor, Dll</i></span>
                             </div>
                         </div>
                     </div>

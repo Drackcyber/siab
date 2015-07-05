@@ -25,11 +25,11 @@
                                 <div class="input-group">
                                     <span class="input-group-addon"><span class="fa fa-pencil"></span></span>
                                     <?php foreach ($data_tipe as $d) { ?>
-                                        <input name="tipe" type="text" value="<?php echo $d->nama ?>"class="form-control"/>
+                                        <input name="tipe" type="text" value="<?php echo $d->nama ?>"class="form-control" required="required">
                                         <input name="id" type="hidden" value="<?php echo $d->id_tipe ?>"class="form-control"/>
                                     <?php } ?>
                                 </div>
-                                <span class="help-block"><i>Bencana Alam, Konflik, Kecelakaan</i></span>
+                                <span class="help-block"><i>Gempa Bumi, Longsor, Dll</i></span>
                             </div>
                         </div>
                     </div>
