@@ -27,7 +27,7 @@
                     <div class="panel-body">
                         <div class="list-group list-group-contact">
                         <?php $i=1; foreach ($artikel as $a) { ?>
-                            <a href="<?php base_url() ?>artikel/" class="list-group-item"><?php echo $a->judul ?></a>
+                            <a href="#<?php echo $a->judul ?>" class="list-group-item"><?php echo $a->judul ?></a>
                         <?php $i++; } ?>
                         </div>
                     </div>
@@ -38,7 +38,7 @@
             <?php foreach ($artikel as $a) { ?>
             <div class="col-md-9">
                 <div class="blog-content">
-                    <div class="panel panel-default">
+                    <div class="panel panel-default" id="<?php echo $a->judul ?>">
                         <div class="panel-heading">
                             <h2><?php echo $a->judul ?>
                             <span class="blog-date pull-right"><span class="fa fa-calendar"></span> <?php echo $a->tgl_post ?> |<span class="fa fa-user"></span>  Admin</span></h2>
