@@ -22,20 +22,20 @@
                 <div class="login-logo"></div>
                 <div class="login-body">
                     <div class="login-title"><strong>Log In</strong> to your account</div>
-                    <form action="<?php base_url() ?>login/login_adm" class="form-horizontal" method="POST">
+                    <form action="<?php base_url() ?>" class="form-horizontal" method="post">
                         <div class="form-group">
                             <div class="col-md-12">
-                                <input type="text" name="username" class="form-control" placeholder="Username"/>
+                                <input type="text" name="user_login" class="form-control" placeholder="Username"/>
                             </div>
                         </div>
                         <div class="form-group">
                             <div class="col-md-12">
-                                <input type="password" name="password" class="form-control" placeholder="Password"/>
+                                <input type="password" name="pass_login" class="form-control" placeholder="Password"/>
                             </div>
                         </div>
                         <div class="form-group">
                             <div class="col-md-6 pull-left">
-                                <a href="<?php base_url() ?>../siab/home" class="btn btn-info fa fa-external-link" title="Menuju Halaman Depan"></a>
+                                <a href="<?php base_url() ?>../home" class="btn btn-info fa fa-external-link" title="Menuju Halaman Depan"></a>
                             </div>
                             <div class="col-md-6 pull-right">
                                 <button class="btn btn-success btn-block"><i class="fa fa-sign-in"></i>Log In</button>

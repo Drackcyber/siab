@@ -11,7 +11,8 @@ class home extends CI_Controller {
 
 	public function index()
 	{	
-		$data['grafik']=$this->db_utama->show_all('siab_tipe');
+		$data['assesment']=$this->db_home->show_all_lim('siab_assesment', 5);
+		$data['grafik']=$this->db_home->show_all_distinc();
 		$data['id_bencana']=$this->db_home->show_all_distinc();
 		$this->template->render('index',$data);
 	}

@@ -28,6 +28,7 @@ class db_login extends CI_Model {
                     'id' => $row->id_petugas,
                     'nama' => $row->nama,
                     'user' => $row->user,
+                    'petugas'=>$row->status,
                     'validated' => true
                     );
             $this->session->set_userdata("login", $data);

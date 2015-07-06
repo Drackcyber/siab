@@ -32,7 +32,7 @@
                 <!-- START X-NAVIGATION -->
                 <ul class="x-navigation">
                     <li class="xn-logo">
-                        <a href="<?php echo base_url() ?>admin">SIAB</a>
+                        <a href="<?php echo base_url() ?>petugas">SIAB</a>
                         <a href="#" class="x-navigation-control"></a>
                     </li>
                     <li class="xn-profile">
@@ -49,56 +49,38 @@
                             </div>
                             <div class="profile-controls">
                                 <a href="#" class="profile-control-left"><span class="fa fa-info"></span></a>
-                                <a href="<?php echo base_url() ?>admin/inbox" class="profile-control-right"><span class="fa fa-envelope"></span></a>
+                                <a href="<?php echo base_url() ?>petugas/inbox" class="profile-control-right"><span class="fa fa-envelope"></span></a>
                             </div>
                         </div>
                     </li>
                     <li class="xn-title">Pendataan Bencana</li>
                     <li class="active">
-                        <a href="<?php echo base_url() ?>admin"><span class="fa fa-desktop"></span> <span class="xn-text">Dashboard</span></a>
+                        <a href="<?php echo base_url() ?>petugas"><span class="fa fa-desktop"></span> <span class="xn-text">Dashboard</span></a>
                     </li>
                     <li class="xn-openable">
                         <a href="#"><span class="fa fa-files-o"></span> <span class="xn-text">Assesment Bencana</span></a>
                         <ul>
-                            <li><a href="<?php echo base_url() ?>admin/add_assessment"><span class="fa fa-plus"></span> Tambah Assesment </a></li>
-                            <li><a href="<?php echo base_url() ?>admin/add_tipe"><span class="fa fa-th-list"></span>Jenis / Tipe Bencana </a></li>
-                            <li><a href="<?php echo base_url() ?>admin/daftar_assessment"><span class="fa fa-table"></span> Daftar Assesment </a></li>
-                            <li><a href="<?php echo base_url() ?>admin/peta_assessment"><span class="fa fa-globe"></span> Peta Bencana </a></li>
+                            <li><a href="<?php echo base_url() ?>petugas/add_assessment"><span class="fa fa-plus"></span> Tambah Assesment </a></li>
+                            <li><a href="<?php echo base_url() ?>petugas/add_tipe"><span class="fa fa-th-list"></span>Jenis / Tipe Bencana </a></li>
+                            <li><a href="<?php echo base_url() ?>petugas/daftar_assessment"><span class="fa fa-table"></span> Daftar Assesment </a></li>
+                            <li><a href="<?php echo base_url() ?>petugas/peta_assessment"><span class="fa fa-globe"></span> Peta Bencana </a></li>
                             
                         </ul>
                     </li>
                     <li class="xn-openable">
                         <a href="#"><span class="fa fa-file-text"></span><span class="xn-text">Artikel Bencana</span></a>
                         <ul>
-                            <li><a href="<?php echo base_url() ?>admin/add_artikel"><span class="fa fa-file-text-o"></span>Tambah Artikel</a></li>
-                            <li><a href="<?php echo base_url() ?>admin/view_artikel_all"><span class="fa fa-th-list"></span>Daftar Artikel</a></li>
+                            <li><a href="<?php echo base_url() ?>petugas/add_artikel"><span class="fa fa-file-text-o"></span>Tambah Artikel</a></li>
+                            <li><a href="<?php echo base_url() ?>petugas/view_artikel_all"><span class="fa fa-th-list"></span>Daftar Artikel</a></li>
                         </ul>
                     </li>
                     <li class="xn-title">Pesan Pengunjung</li>
                     <li class="xn-openable">
                         <a href="#"><span class="fa fa-envelope-o"></span><span class="xn-text"> Manajemen Pesan</span></a>
                         <ul>
-                            <li><a href="<?php echo base_url() ?>admin/inbox"><span class="fa fa-inbox"></span> Pesan Masuk</a></li>
-                            <li><a href="<?php echo base_url() ?>admin/send"><span class="fa fa-paper-plane"></span> Pesan Terkirim</a></li>
-                            <li><a href="<?php echo base_url() ?>admin/delete"><span class="fa fa-trash-o"></span> Pesan Dihapus</a></li>
-                        </ul>
-                    </li>
-
-                    <li class="xn-title">Manajemen Petugas</li>
-                    <li class="xn-openable">
-                        <a href="#"><span class="fa fa-users"></span> <span class="xn-text">Manajemen Petugas</span></a>
-                        <ul>
-                            <li><a href="<?php echo base_url() ?>admin/add_petugas"><span class="fa fa-user"></span> Tambah Petugas</a></li>
-                            <li><a href="<?php echo base_url() ?>admin/list_petugas"><span class="fa fa-th-list"></span> Daftar Petugas</a></li>
-                        </ul>
-                    </li>
-
-                    <li class="xn-title">Manajemen Halaman</li>
-                    <li class="xn-openable">
-                        <a href="#"><span class="fa fa-desktop"></span> <span class="xn-text">Manajemen Halaman</span></a>
-                        <ul>
-                            <li><a href="<?php echo base_url() ?>admin/about"><span class="fa fa-info-circle"></span> Tentang Aplikasi</a></li> 
-                            <li><a href="<?php echo base_url() ?>admin/contact"><span class="fa fa-user"></span> Hubungi Kami</a></li> 
+                            <li><a href="<?php echo base_url() ?>petugas/inbox"><span class="fa fa-inbox"></span> Pesan Masuk</a></li>
+                            <li><a href="<?php echo base_url() ?>petugas/send"><span class="fa fa-paper-plane"></span> Pesan Terkirim</a></li>
+                            <li><a href="<?php echo base_url() ?>petugas/delete"><span class="fa fa-trash-o"></span> Pesan Dihapus</a></li>
                         </ul>
                     </li>
                 </ul>
@@ -148,11 +130,11 @@
                                 </div>
                             </div>
                             <div class="panel-body list-group scroll">
-                                <a class="list-group-item" href="<?php echo base_url() ?>admin/edit_profile/<?php  echo $id_ses['id']; ?>">
+                                <a class="list-group-item" href="<?php echo base_url() ?>petugas/edit_profile/<?php  echo $id_ses['id']; ?>">
                                     <span class="fa fa-edit"></span>
                                     <strong>Edit Profile</strong>    
                                 </a>
-                                <a class="list-group-item" href="<?php echo base_url() ?>admin/view_profile/<?php  echo $id_ses['id']; ?>">
+                                <a class="list-group-item" href="<?php echo base_url() ?>petugas/view_profile/<?php  echo $id_ses['id']; ?>">
                                     <span class="fa fa-eye"></span>
                                     <strong>View Profile</strong>    
                                 </a>
@@ -179,7 +161,7 @@
                     <div class="mb-title"><span class="fa fa-sign-out"></span> Log <strong>Out</strong> ?</div>
                     <div class="mb-content">
                         <p>Apakah anda yakin ingin keluar dari halaman ini?</p>
-                        <p>Tekan NO jika anda masing ingin melanjutkan pekerjaan. Tekan Yes jika ingin keluar dari admin panel.</p>
+                        <p>Tekan NO jika anda masing ingin melanjutkan pekerjaan. Tekan Yes jika ingin keluar dari petugas panel.</p>
                     </div>
                     <div class="mb-footer">
                         <div class="pull-right">

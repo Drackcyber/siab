@@ -33,21 +33,6 @@
                         <a href="<?php echo base_url() ?>home"></a>
                     </div>
                     <!-- ./page logo -->
-                    <!-- search -->
-                    <div class="search">
-                        <div class="search-button"><span class="fa fa-search"></span></div>
-                        <div class="search-container animated fadeInDown">
-                            <form action="#" method="post">
-                                <div class="input-group">
-                                    <input type="text" class="form-control" placeholder="Search..."/>
-                                    <div class="input-group-btn">
-                                        <button class="btn btn-primary fa fa-search"></button>
-                                    </div>
-                                </div>
-                            </form>
-                        </div>
-                    </div>
-                    <!-- ./search -->
                     <!-- nav mobile bars -->
                     <div class="navigation-toggle">
                         <div class="navigation-toggle-button"><span class="fa fa-bars"></span></div>
@@ -181,11 +166,16 @@
                 } );
             } );
         </script>
+
         <?php 
             $isi="";
             if (isset($grafik)) {  
                 foreach ($grafik as $g) {
-                    $isi=$isi."'".$g->nama."',";
+                    $jumlah=$this->db_utama->show_all_where('siab_tipe','id_tipe',$g->jenis_bencana);
+                    foreach ($jumlah as $j) {
+                        $isi=$isi."'".$j->nama."',";
+                    }
+                    
 
                 }
                 $data_grafik="";
@@ -200,10 +190,10 @@
 
 
                 //echo $isi."<br> ";
-                $max=strlen($isi);
-                $tipe=substr($isi,0,$max-1);
-                $max2=strlen($data_grafik);
-                $grafik=substr($data_grafik,0,$max2-1);
+                $max    =strlen($isi);
+                $tipe   =substr($isi,0,$max-1);
+                $max2   =strlen($data_grafik);
+                $grafik =substr($data_grafik,0,$max2-1);
 
                 ?>
                 <script>

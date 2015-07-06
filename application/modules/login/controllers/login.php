@@ -5,7 +5,8 @@ class login extends MX_Controller {
 	public function __construct()
 	{
 		parent::__construct();
-		$this->load->model('db_login');
+		$this->load->model('db_login');		
+		$this->load->library('session');
 	}
 
 	public function index()
@@ -18,7 +19,14 @@ class login extends MX_Controller {
         if(! $result){
             redirect('login');
         }else{
-            redirect('admin');
+        	$status=$this->session->userdata('login');
+        	if ($status['status']==1) {
+        		redirect('admin');
+        	} else {
+        		redirect('petugas');
+        	}
+        	
+            
         } 
     }
 

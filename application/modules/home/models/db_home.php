@@ -10,6 +10,7 @@ class db_home extends CI_Model {
 		
 	}
 
+	
 	public function show_all_distinc(){
 		$query=$this->db->query("SELECT DISTINCT(jenis_bencana) FROM siab_assesment ORDER BY jenis_bencana");
 

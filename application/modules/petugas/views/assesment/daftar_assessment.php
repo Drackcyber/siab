@@ -51,9 +51,9 @@
                                 </td>
                             <td></td>
                             <td>
-                                <a href="<?php echo base_url() ?>admin/edit_assessment/<?php echo $a->id_assesment ?>" class="btn btn-sm btn-warning fa fa-edit" title="Edit Assessment"></a>
+                                <a href="<?php echo base_url() ?>petugas/edit_assessment/<?php echo $a->id_assesment ?>" class="btn btn-sm btn-warning fa fa-edit" title="Edit Assessment"></a>
                                 <a href="<?php echo base_url() ?>assesment/view_assessment/<?php echo $a->id_assesment ?>" class="btn btn-sm btn-warning fa fa-eye" title="Lihat Detail"></a>
-                                <a href="<?php echo base_url() ?>admin/del_assessment/<?php echo $a->id_assesment ?>" class="btn btn-sm btn-danger fa fa-trash-o" title="Hapus Assessment"></a> </td>
+                                <a href="<?php echo base_url() ?>petugas/del_assessment/<?php echo $a->id_assesment ?>" class="btn btn-sm btn-danger fa fa-trash-o" title="Hapus Assessment"></a> </td>
                         </tr>
                         <?php  $no++;  }
                         ?>

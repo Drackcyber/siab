@@ -89,7 +89,7 @@
                             $data_grafik="";
                             foreach ($id_bencana as $i) {
                                 //echo $i->jenis_bencana."<br>"; 
-                                $jumlah=$this->db_admin->show_data_count($i->jenis_bencana);
+                                $jumlah=$this->db_petugas->show_data_count($i->jenis_bencana);
                                 foreach ($jumlah as $j) {
                                     //echo $j->jumlah."<br>";
                                     $data_grafik=$data_grafik."".$j->jumlah.",";

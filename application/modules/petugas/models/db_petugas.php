@@ -1,6 +1,6 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
-class db_admin extends CI_Model {
+class db_petugas extends CI_Model {
 
 	public $variable;
 

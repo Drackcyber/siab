@@ -1,22 +1,22 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
-class admin extends MX_Controller {
+class petugas extends MX_Controller {
 
 	public function __construct()
 	{
 		parent::__construct();
 		$this->load->model('db_utama');
-		$this->load->model('db_admin');
+		$this->load->model('db_petugas');
 		$this->load->library('session');
 	}
 
 	public function index()
 	{	
 		$this->validation();
-		$data['grafik']=$this->db_admin->show_all_distinc();
-		$data['id_bencana']=$this->db_admin->show_all_distinc();
-		$data['assesment']=$this->db_admin->show_all_lim('siab_assesment',5);
-		$data['artikel']=$this->db_admin->show_all_lim('siab_artikel_prb',5);
+		$data['grafik']=$this->db_petugas->show_all_distinc();
+		$data['id_bencana']=$this->db_petugas->show_all_distinc();
+		$data['assesment']=$this->db_petugas->show_all_lim('siab_assesment',5);
+		$data['artikel']=$this->db_petugas->show_all_lim('siab_artikel_prb',5);
 		$this->template->render('index',$data);
 	}
 
@@ -49,13 +49,13 @@ class admin extends MX_Controller {
 		$this->validation();
 		$judul =$this->input->post('judul');
 		$isi   =$this->input->post('isi');
-		$this->db_admin->save_artikel($judul,$isi);
+		$this->db_petugas->save_artikel($judul,$isi);
 		redirect('admin/view_artikel_all');
 	}
 
 	public function del_artikel($id){
 		$this->validation();
-		$this->db_admin->del_artikel($id);
+		$this->db_petugas->del_artikel($id);
 		redirect('admin/view_artikel_all');
 	}
 
@@ -83,7 +83,7 @@ class admin extends MX_Controller {
 		$judul=$this->input->post('judul');
 		$isi=$this->input->post('isi');
 		$id_artikel=$this->input->post('id_artikel');
-		$this->db_admin->update_artikel($judul,$isi,$id_artikel);
+		$this->db_petugas->update_artikel($judul,$isi,$id_artikel);
 		redirect('admin/view_artikel_all');
 	}
 
@@ -111,13 +111,13 @@ class admin extends MX_Controller {
 	public function save_tipe(){
 		$this->validation();
 		$post=$this->input->post('tipe');
-		$this->db_admin->save_tipe($post);
+		$this->db_petugas->save_tipe($post);
 		redirect('admin/add_tipe');
 	}
 
 	public function del_tipe($id){
 		$this->validation();
-		$this->db_admin->del_tipe($id);
+		$this->db_petugas->del_tipe($id);
 		redirect('admin/add_tipe');
 	}
 
@@ -125,7 +125,7 @@ class admin extends MX_Controller {
 		$this->validation();
 		$id=$this->input->post('id');
 		$post=$this->input->post('tipe');
-		$this->db_admin->update_tipe($id,$post);
+		$this->db_petugas->update_tipe($id,$post);
 		redirect('admin/add_tipe');
 	}
 
@@ -167,7 +167,7 @@ class admin extends MX_Controller {
 		$jk        =$this->input->post('jk');
 		$jab       =$this->input->post('jab');
 
-		$this->db_admin->save_petugas($alamat,$hp,$nama,$tgl_lahir,$tmp_lahir,$email,$username,$password,$jk,$jab);
+		$this->db_petugas->save_petugas($alamat,$hp,$nama,$tgl_lahir,$tmp_lahir,$email,$username,$password,$jk,$jab);
 		redirect('admin/list_petugas');
 	}
 
@@ -190,14 +190,14 @@ class admin extends MX_Controller {
 		$jab        =$this->input->post('jab');
 		$id_petugas =$this->input->post('id_petugas');
 
-		$this->db_admin->update_petugas($id_petugas,$alamat,$hp,$nama,$tgl_lahir,$tmp_lahir,$email,$password,$jk,$jab);
+		$this->db_petugas->update_petugas($id_petugas,$alamat,$hp,$nama,$tgl_lahir,$tmp_lahir,$email,$password,$jk,$jab);
 		redirect('admin/list_petugas');
 	}
 
 
 	public function del_petugas($id){
 		$this->validation();
-		$this->db_admin->del_petugas($id);
+		$this->db_petugas->del_petugas($id);
 		redirect('admin/list_petugas');
 	}
 
@@ -307,7 +307,7 @@ class admin extends MX_Controller {
 		$jml_keb5        =$this->input->post('jml_keb5');
 		$ket_keb         =$this->input->post('ket_keb');
 
-		$this->db_admin->save_assesment($lat, $lng, $lokasi_bencana, $kecamatan, $jenis_bencana, $nm_bencana, $inten_kejadian, $waktu, $tgl_kejadian, $sarana_umum, $ket_umum, $meninggal, $lk_ringan, $lk_berat, $hilang, $rmh_hancur, $rmh_ringan, $rmh_berat, $akses_jalan, $akses_jembatan, $akses_transport, $ket_kerusakan, $pengungsian, $almt_pengungsi, $pengungsi_l, $pengungsi_p, $nm_kontak, $hp_kontak, $jab_kontak, $ket_pengungsi, $tmbh_keb1, $tmbh_keb2, $tmbh_keb3, $tmbh_keb4, $tmbh_keb5, $jml_keb1, $jml_keb2, $jml_keb3, $jml_keb4, $jml_keb5, $ket_keb);
+		$this->db_petugas->save_assesment($lat, $lng, $lokasi_bencana, $kecamatan, $jenis_bencana, $nm_bencana, $inten_kejadian, $waktu, $tgl_kejadian, $sarana_umum, $ket_umum, $meninggal, $lk_ringan, $lk_berat, $hilang, $rmh_hancur, $rmh_ringan, $rmh_berat, $akses_jalan, $akses_jembatan, $akses_transport, $ket_kerusakan, $pengungsian, $almt_pengungsi, $pengungsi_l, $pengungsi_p, $nm_kontak, $hp_kontak, $jab_kontak, $ket_pengungsi, $tmbh_keb1, $tmbh_keb2, $tmbh_keb3, $tmbh_keb4, $tmbh_keb5, $jml_keb1, $jml_keb2, $jml_keb3, $jml_keb4, $jml_keb5, $ket_keb);
 		redirect('admin/peta_assessment','refresh');
 	}
 
@@ -382,7 +382,7 @@ class admin extends MX_Controller {
 
 	public function del_assessment($id){
 		$this->validation();
-		$this->db_admin->del_assesment($id);
+		$this->db_petugas->del_assesment($id);
 		redirect('admin/daftar_assessment');
 	}
 
@@ -437,7 +437,7 @@ class admin extends MX_Controller {
 		$ket_keb         =$this->input->post('ket_keb');
 		$id_assesment    =$this->input->post('id_assesment');
 		
-		$this->db_admin->update_assessment($id_assesment, $lat, $lng, $lokasi_bencana, $kecamatan, $jenis_bencana, $nm_bencana, $inten_kejadian, $waktu, $tgl_kejadian, $sarana_umum, $ket_umum, $meninggal, $lk_ringan, $lk_berat, $hilang, $rmh_hancur, $rmh_ringan, $rmh_berat, $akses_jalan, $akses_jembatan, $akses_transport, $ket_kerusakan, $pengungsian, $almt_pengungsi, $pengungsi_l, $pengungsi_p, $nm_kontak, $hp_kontak, $jab_kontak, $ket_pengungsi, $tmbh_keb1, $tmbh_keb2, $tmbh_keb3, $tmbh_keb4, $tmbh_keb5, $jml_keb1, $jml_keb2, $jml_keb3, $jml_keb4, $jml_keb5, $ket_keb);
+		$this->db_petugas->update_assessment($id_assesment, $lat, $lng, $lokasi_bencana, $kecamatan, $jenis_bencana, $nm_bencana, $inten_kejadian, $waktu, $tgl_kejadian, $sarana_umum, $ket_umum, $meninggal, $lk_ringan, $lk_berat, $hilang, $rmh_hancur, $rmh_ringan, $rmh_berat, $akses_jalan, $akses_jembatan, $akses_transport, $ket_kerusakan, $pengungsian, $almt_pengungsi, $pengungsi_l, $pengungsi_p, $nm_kontak, $hp_kontak, $jab_kontak, $ket_pengungsi, $tmbh_keb1, $tmbh_keb2, $tmbh_keb3, $tmbh_keb4, $tmbh_keb5, $jml_keb1, $jml_keb2, $jml_keb3, $jml_keb4, $jml_keb5, $ket_keb);
 		redirect('admin/daftar_assessment');
 	}
 
@@ -481,7 +481,7 @@ class admin extends MX_Controller {
 
 		$this->email->send();
 		
-		$this->db_admin->sent($penerima, $isi, $subjek);
+		$this->db_petugas->sent($penerima, $isi, $subjek);
 		redirect('admin/sent');
 	}
 
@@ -542,7 +542,7 @@ class admin extends MX_Controller {
 		$this->validation();
 		$id_about = $this->input->post('id_about');
 		$isi      = $this->input->post('isi');
-		$this->db_admin->update_about($id_about,$isi);
+		$this->db_petugas->update_about($id_about,$isi);
 		redirect('admin/about');
 	}
 
@@ -563,7 +563,7 @@ class admin extends MX_Controller {
 		echo "<br>	".$email      =$this->input->post('email');
 		echo "<br>	".$website    =$this->input->post('website');
 
-		$this->db_admin->update_contact($id_contact,$alamat,$no_telp_1,$no_telp_2,$email,$website);
+		$this->db_petugas->update_contact($id_contact,$alamat,$no_telp_1,$no_telp_2,$email,$website);
 		redirect('admin/contact');
 	}
 
